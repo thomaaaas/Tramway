@@ -7,6 +7,9 @@
 class Tramway{
 public:
     Tramway();
+    double getVitesseMax() const;
+    double getVitesseActuelle() const;
+    double getDistanceMin() const;
 private:
     double d_vitesseMax, d_vitesseActuelle, d_distanceMin;
 };

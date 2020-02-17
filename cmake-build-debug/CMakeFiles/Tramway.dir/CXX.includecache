@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/norma/CLionProjects/Tramway/Tramway.cpp
+Tramway.h
+/cygdrive/c/Users/norma/CLionProjects/Tramway/Tramway.h
+
+/cygdrive/c/Users/norma/CLionProjects/Tramway/Tramway.h
+
+/cygdrive/c/Users/norma/CLionProjects/Tramway/main.cpp
+iostream
+-
+Tramway.cpp
+/cygdrive/c/Users/norma/CLionProjects/Tramway/Tramway.cpp
+
