@@ -4,5 +4,9 @@
 
 #ifndef TRAMWAY_STATION_H
 #define TRAMWAY_STATION_H
-
+class Station{
+public:
+    Station();
+private:
+};
 #endif //TRAMWAY_STATION_H
