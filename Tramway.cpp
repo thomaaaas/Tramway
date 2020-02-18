@@ -17,3 +17,15 @@ double Tramway::getVitesseMax() const {
 double Tramway::getVitesseActuelle() const {
     return d_vitesseActuelle;
 }
+
+void Tramway::setVitesseMax(double valeur){
+    d_vitesseMax = valeur;
+}
+
+void Tramway::setDistanceMin(double valeur) {
+    d_distanceMin = valeur;
+}
+
+void Tramway::setVitesseActuelle(double valeur){
+    d_vitesseActuelle = valeur;
+}

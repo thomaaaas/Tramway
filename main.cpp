@@ -8,6 +8,8 @@ using namespace std;
 
 int main() {
     Tramway tram{};
-    cout << tram.getVitesseActuelle();
+    cout << tram.getVitesseActuelle() << endl;
+    tram.setVitesseMax(10.0);
+    cout << tram.getVitesseMax();
     return 0;
 }

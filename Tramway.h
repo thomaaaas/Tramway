@@ -10,6 +10,9 @@ public:
     double getVitesseMax() const;
     double getVitesseActuelle() const;
     double getDistanceMin() const;
+    void setVitesseMax(double valeur);
+    void setVitesseActuelle(double valeur);
+    void setDistanceMin(double valeur);
 private:
     double d_vitesseMax, d_vitesseActuelle, d_distanceMin;
 };
