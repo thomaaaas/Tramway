@@ -1,6 +1,9 @@
 #include "Station.h"
 
-Station::Station(){}
+Station::Station(int x, int y):
+    d_X{x},
+    d_Y{y}
+{}
 
 Station::getX() const{
     return d_X;

@@ -2,7 +2,7 @@
 #define TRAMWAY_STATION_H
 class Station{
 public:
-    Station();
+    Station(int x, int y);
     int getX() const;
     int getY() const;
     void setPosition(int x, int y);
