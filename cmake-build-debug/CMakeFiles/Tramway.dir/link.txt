@@ -1,1 +1,0 @@
-/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/Tramway.dir/main.cpp.o  -o Tramway.exe -Wl,--out-implib,libTramway.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
