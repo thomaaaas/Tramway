@@ -53,5 +53,11 @@ void Tramway::setPosition(int x, int y){
 }
 
 void Tramway::affiche(){
+    setcolor(BLUE);
+    bar(d_X, d_Y, d_X+20, d_Y+20);
+}
+
+void Tramway::efface(){
+    setcolor(WHITE);
     bar(d_X, d_Y, d_X+20, d_Y+20);
 }

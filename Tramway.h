@@ -14,6 +14,7 @@ public:
     void setDistanceMin(double valeur);
     void setPosition(int x, int y);
     void affiche();
+    void efface();
 private:
     double d_vitesseMax, d_vitesseActuelle, d_distanceMin;
     int d_X, d_Y;
