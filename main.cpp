@@ -20,35 +20,44 @@ int main()
 
     Ligne ligne{station1.getX(),station1.getY(),station3.getX(),station3.getY()};
 
-
     opengraphsize(900,900);
     setbkcolor(WHITE);
-    setcolor(BLUE);
 
-    while(tram.getX()<800 && tram.getY() < 800){
-        cleardevice();
-        setcolor(BLUE);
-
-        tram.setPosition(tram.getX()+tram.getVitesseMax(), tram.getY()+tram.getVitesseMax());
-
-        tram.affiche();
-        ligne.affiche();
-        station1.affiche();
-        station2.affiche();
-        station3.affiche();
-
-        if(tram.getX() == 400 && tram.getY() == 400){
-            setcolor(RED);
+    while(true){
+        while(tram.getX() <= station3.getX() && tram.getY() <= station3.getY()){
+            if(tram.getX() == station2.getX() && tram.getY() == station2.getY()){
+                setcolor(RED);
+                Sleep(2000);
+            }else{
+                setcolor(BLUE);
+            }
             cleardevice();
             tram.affiche();
             ligne.affiche();
             station1.affiche();
             station2.affiche();
             station3.affiche();
-            Sleep(2000);
+            tram.setPosition(tram.getX()+tram.getVitesseMax(), tram.getY()+tram.getVitesseMax());
+            Sleep(05);
         }
-        Sleep(10);
+        while(tram.getX() >= station1.getX() && tram.getY() >= station1.getY()){
+            if(tram.getX() == station2.getX() && tram.getY() == station2.getY()){
+                setcolor(RED);
+                Sleep(2000);
+            }else{
+                setcolor(BLUE);
+            }
+            cleardevice();
+            tram.affiche();
+            ligne.affiche();
+            station1.affiche();
+            station2.affiche();
+            station3.affiche();
+            tram.setPosition(tram.getX()-tram.getVitesseMax(), tram.getY()-tram.getVitesseMax());
+            Sleep(05);
+        }
     }
+
     getch();
     closegraph();
     return 0;
