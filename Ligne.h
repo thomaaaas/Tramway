@@ -11,6 +11,7 @@ public:
     int getYdebut() const;
     int getXfin() const;
     int getYfin() const;
+    void affiche();
 private:
     int d_XDebut, d_YDebut, d_XFin, d_YFin;
 };

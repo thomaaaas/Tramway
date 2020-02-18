@@ -31,12 +31,13 @@
 	"graphics.h"
 	<Windows.h>
 
-1582030051 source:c:\users\norma\clionprojects\tramway\ligne.cpp
+1582033016 source:c:\users\norma\clionprojects\tramway\ligne.cpp
 	"Ligne.h"
+	"graphics.h"
 
-1582030051 c:\users\norma\clionprojects\tramway\ligne.h
+1582032910 c:\users\norma\clionprojects\tramway\ligne.h
 
-1582031253 source:c:\users\norma\clionprojects\tramway\main.cpp
+1582033343 source:c:\users\norma\clionprojects\tramway\main.cpp
 	<iostream>
 	"Tramway.h"
 	"Ligne.h"
@@ -44,17 +45,19 @@
 	"graphics.h"
 	<Windows.h>
 
-1582014965 c:\users\norma\clionprojects\tramway\tramway.h
+1582032681 c:\users\norma\clionprojects\tramway\tramway.h
 
-1582030692 c:\users\norma\clionprojects\tramway\station.h
+1582033106 c:\users\norma\clionprojects\tramway\station.h
 
 1582009738 c:\users\norma\clionprojects\tramway\graphics.h
 
-1582031250 source:c:\users\norma\clionprojects\tramway\station.cpp
+1582033169 source:c:\users\norma\clionprojects\tramway\station.cpp
 	"Station.h"
+	"graphics.h"
 
-1582015082 source:c:\users\norma\clionprojects\tramway\tramway.cpp
+1582032648 source:c:\users\norma\clionprojects\tramway\tramway.cpp
 	"Tramway.h"
+	"graphics.h"
 
 1582009738 source:c:\users\norma\clionprojects\tramway\winbgi.cpp
 	<windows.h>

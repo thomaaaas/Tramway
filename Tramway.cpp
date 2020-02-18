@@ -1,4 +1,5 @@
 #include "Tramway.h"
+#include "graphics.h"
 
 Tramway::Tramway():
     d_distanceMin{0.0},
@@ -49,4 +50,8 @@ void Tramway::setVitesseActuelle(double valeur){
 void Tramway::setPosition(int x, int y){
     d_X = x;
     d_Y = y;
+}
+
+void Tramway::affiche(){
+    bar(d_X, d_Y, d_X+20, d_Y+20);
 }

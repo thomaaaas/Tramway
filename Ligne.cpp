@@ -2,6 +2,7 @@
 // Created by norma on 17/02/2020.
 //
 #include "Ligne.h"
+#include "graphics.h"
 
 Ligne::Ligne(int Xdebut, int YDebut, int XFin, int YFin){
     d_XDebut = Xdebut;
@@ -24,4 +25,8 @@ int Ligne::getXfin() const{
 
 int Ligne::getYfin() const{
     return d_YFin;
+}
+
+void Ligne::affiche(){
+    line(d_XDebut, d_YDebut, d_XFin, d_YFin);
 }
