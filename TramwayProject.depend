@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1582009738 source:c:\users\norma\clionprojects\tramwayproject\ligne.cpp
+	"Ligne.h"
+
+1582009738 c:\users\norma\clionprojects\tramwayproject\ligne.h
+
+1582016364 source:c:\users\norma\clionprojects\tramwayproject\station.cpp
+	"Station.h"
+
+1582016185 c:\users\norma\clionprojects\tramwayproject\station.h
+
+1582015082 source:c:\users\norma\clionprojects\tramwayproject\tramway.cpp
+	"Tramway.h"
+
+1582014965 c:\users\norma\clionprojects\tramwayproject\tramway.h
+
+1582009738 source:c:\users\norma\clionprojects\tramwayproject\winbgi.cpp
+	<windows.h>
+	<stddef.h>
+	<stdio.h>
+	<math.h>
+	"graphics.h"
+
+1582009738 c:\users\norma\clionprojects\tramwayproject\graphics.h
+
+1582015606 source:c:\users\norma\clionprojects\tramwayproject\main.cpp
+	<iostream>
+	"Tramway.h"
+	"Ligne.h"
+	"Station.h"
+	"graphics.h"
+	<Windows.h>
+

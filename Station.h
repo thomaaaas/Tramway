@@ -1,12 +1,12 @@
-//
-// Created by norma on 29/01/2020.
-//
-
 #ifndef TRAMWAY_STATION_H
 #define TRAMWAY_STATION_H
 class Station{
 public:
     Station();
+    int getX() const;
+    int getY() const;
+    void setPosition(int x, int y);
 private:
+    int d_X, d_Y;
 };
 #endif //TRAMWAY_STATION_H

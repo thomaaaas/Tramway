@@ -1,15 +1,35 @@
 #include <iostream>
-#include "Tramway.cpp"
-#include "Ligne.cpp"
-#include "Station.cpp"
+#include "Tramway.h"
+#include "Ligne.h"
+#include "Station.h"
 #include "graphics.h"
+#include <Windows.h>
 
 using namespace std;
 
-int main() {
-    Tramway tram{};
-    cout << tram.getVitesseActuelle() << endl;
-    tram.setVitesseMax(10.0);
-    cout << tram.getVitesseMax();
+void lectureFichier(const string &nomFichier){
+
+};
+
+int main()
+{
+    int x, y;
+    Tramway tram{10.0,5.0,12.0,450,450};
+    x=tram.getX();
+    y=tram.getY();
+
+    opengraphsize(900,900);
+    setbkcolor(WHITE);
+    setcolor(BLUE);
+
+    while(x<900 && y < 900){
+        cleardevice();
+        bar(x+5, y+5, x+25, y+25);
+        x+=1;
+        Sleep(10);
+    }
+
+    getch();
+    closegraph();
     return 0;
 }
