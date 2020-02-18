@@ -13,8 +13,7 @@ void lectureFichier(const string &nomFichier){
 
 int main()
 {
-    Tramway tram{1.0,5.0,12.0,0,0};
-    //Tramway tram2{1.0,5.0,12.0,400,400};
+    Tramway tram{2.0,12.0,0,0};
     Station station1{0,0};
     Station station2{400,400};
     Station station3{800,800};
@@ -35,7 +34,7 @@ int main()
         while(tram.getX() <= station3.getX() && tram.getY() <= station3.getY()){
 
             tram.efface();
-            tram.setPosition(tram.getX()+tram.getVitesseMax(), tram.getY()+tram.getVitesseMax());
+            tram.setPosition(tram.getX()+tram.getVitesse(), tram.getY()+tram.getVitesse());
             tram.affiche();
 
             ligne.affiche();
@@ -43,19 +42,20 @@ int main()
             station2.affiche();
             station3.affiche();
 
-            Sleep(05);
+            Sleep(01);
         }
         while(tram.getX() >= station1.getX() && tram.getY() >= station1.getY()){
 
             tram.efface();
-            tram.setPosition(tram.getX()-tram.getVitesseMax(), tram.getY()-tram.getVitesseMax());
+            tram.setPosition(tram.getX()-tram.getVitesse(), tram.getY()-tram.getVitesse());
             tram.affiche();
 
             ligne.affiche();
             station1.affiche();
             station2.affiche();
             station3.affiche();
-            Sleep(05);
+
+            Sleep(01);
         }
     }
 
