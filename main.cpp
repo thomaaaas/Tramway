@@ -14,14 +14,18 @@ void lectureFichier(const string &nomFichier){
 int main()
 {
     Tramway tram{1.0,5.0,12.0,0,0};
-    Ligne ligne{0,0,800,800};
-    Station station{400,400};
+    Station station1{0,0};
+    Station station2{400,400};
+    Station station3{800,800};
+
+    Ligne ligne{station1.getX(),station1.getY(),station3.getX(),station3.getY()};
+
 
     opengraphsize(900,900);
     setbkcolor(WHITE);
     setcolor(BLUE);
 
-    while(tram.getX()<900 && tram.getY() < 900){
+    while(tram.getX()<800 && tram.getY() < 800){
         cleardevice();
         setcolor(BLUE);
 
@@ -29,19 +33,23 @@ int main()
 
         tram.affiche();
         ligne.affiche();
-        station.affiche();
+        station1.affiche();
+        station2.affiche();
+        station3.affiche();
 
         if(tram.getX() == 400 && tram.getY() == 400){
             setcolor(RED);
             cleardevice();
             tram.affiche();
             ligne.affiche();
-            station.affiche();
+            station1.affiche();
+            station2.affiche();
+            station3.affiche();
             Sleep(2000);
         }
         Sleep(10);
     }
-
+    getch();
     closegraph();
     return 0;
 }

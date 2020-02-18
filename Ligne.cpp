@@ -1,6 +1,3 @@
-//
-// Created by norma on 17/02/2020.
-//
 #include "Ligne.h"
 #include "graphics.h"
 
