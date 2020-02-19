@@ -16,11 +16,11 @@ int main()
     Tramway tram{2.0,12.0,0,0};
     Station station1{0,0};
     Station station2{400,400};
-    Station station3{800,800};
+    Station station3{700,700};
 
     Ligne ligne{station1.getX(),station1.getY(),station3.getX(),station3.getY()};
 
-    opengraphsize(900,900);
+    opengraphsize(800,800);
     setbkcolor(WHITE);
     setcolor(BLUE);
     cleardevice();
