@@ -1,0 +1,20 @@
+NombreLignes: 2
+CoordoneesLignes:
+	(1;1)
+	(5;5)
+	(0;0)
+	(1;1)
+NombreStations: 5 
+CoordoneesStations:
+	(1;1)
+	(2;2)
+	(3;3)
+	(4;4)
+	(5;5)
+NombreTrams: 2
+CoordonesDepart:
+	(1;1)
+	(2;2)
+DirectionTrams: 
+	Aller
+	Retour
