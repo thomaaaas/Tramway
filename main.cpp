@@ -42,7 +42,7 @@ int main()
             station2.affiche();
             station3.affiche();
 
-            Sleep(01);
+            Sleep(10);
         }
         while(tram.getX() >= station1.getX() && tram.getY() >= station1.getY()){
 
@@ -55,7 +55,7 @@ int main()
             station2.affiche();
             station3.affiche();
 
-            Sleep(01);
+            Sleep(10);
         }
     }
 
