@@ -13,8 +13,6 @@
 
 using namespace std;
 
-
-
 void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, vector<Station> &tabStation, vector<Tramway> &tabTramway){
     string temporaire;
     char c;

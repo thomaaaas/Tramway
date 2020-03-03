@@ -29,6 +29,10 @@ int Tramway::getY() const{
     return d_Y;
 }
 
+bool Tramway::getSens() const{
+    return d_sens;
+}
+
 void Tramway::setVitesse(double valeur){
     d_vitesse = valeur;
 }
@@ -40,6 +44,10 @@ void Tramway::setDistanceMin(double valeur) {
 void Tramway::setPosition(int x, int y){
     d_X = x;
     d_Y = y;
+}
+
+void Tramway::setSens(bool sens){
+    d_sens = sens;
 }
 
 void Tramway::affiche(){
