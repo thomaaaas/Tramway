@@ -51,4 +51,5 @@ void Tramway::affiche(){
 void Tramway::efface(){
     setcolor(WHITE);
     bar(d_X, d_Y, d_X+20, d_Y+20);
+    setcolor(BLUE);
 }

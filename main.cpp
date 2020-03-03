@@ -21,63 +21,51 @@ void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, vector<St
     bool sens;
     int xDebut, yDebut, xFin, yFin, x, y;
     int nbLignes, nbStation, nbTram;
-    ifstream donnes;
-    donnes.open(nomFichier);
-    if(!donnes.is_open()){
+    ifstream donnees;
+    donnees.open(nomFichier);
+    if(!donnees.is_open()){
         cout << "Le fichier n'a pas pu s'ouvrir." << endl;
         return;
     }
 
-    donnes >> temporaire >> nbLignes;
+    donnees >> temporaire >> nbLignes;
     cout << nbLignes << endl;
-    donnes >> temporaire;
+    donnees >> temporaire;
     //Lignes
     for(int i = 0; i < nbLignes; ++i){
-        donnes >> c >> xDebut >> c >> yDebut >>  c;
+        donnees >> c >> xDebut >> c >> yDebut >>  c;
         cout << '(' << xDebut << ';' << yDebut << ')' << endl;
-        donnes >> c >> xFin >> c >> yFin >>  c;
+        donnees >> c >> xFin >> c >> yFin >>  c;
         cout << '(' << xFin << ';' << yFin << ')' << endl;
         tabLigne.push_back(Ligne(xDebut,yDebut,xFin,yFin));
     }
     //Stations
-    donnes >> temporaire >> nbStation;
+    donnees >> temporaire >> nbStation;
     cout << nbStation << endl;
-    donnes >> temporaire;
+    donnees >> temporaire;
     for(int i = 0; i < nbStation; ++i){
-        donnes >> c >> x >> c >> y >>  c;
+        donnees >> c >> x >> c >> y >>  c;
         cout << '(' << x << ';' << y << ')' << endl;
         tabStation.push_back(Station(x,y));
     }
     //Tram
-    donnes >> temporaire >> nbTram;
+    donnees >> temporaire >> nbTram;
     cout << nbTram << endl;
-    donnes >> temporaire;
+    donnees >> temporaire;
     for(int i = 0; i < nbTram; ++i){
-        donnes >> c >> x >> c >> y >>  c;
+        donnees >> c >> x >> c >> y >>  c;
         cout << '(' << x << ';' << y << ')' << endl;
         tabTramway.push_back(Tramway(0,0,x,y));
     }
-    donnes >> temporaire;
+    donnees >> temporaire;
     for(int i = 0; i < nbTram; ++i){
-        donnes >> temporaire;
+        donnees >> temporaire;
         sens = temporaire == "Aller";
         cout << sens << endl;
-        //Fonction de Louis pour creer un Tram
     }
 }
 
-int main()
-{
-    vector<Ligne> tabLigne;
-    vector<Station> tabStation;
-    vector<Tramway> tabTramway;
-    lectureFichier("donnesTram.txt", tabLigne, tabStation, tabTramway);
-
-    opengraphsize(800,800);
-    setbkcolor(WHITE);
-    setcolor(BLUE);
-    cleardevice();
-
+void affichage(vector<Ligne> &tabLigne, vector<Station> &tabStation, vector<Tramway> &tabTramway){
     for(int i = 0; i < tabStation.size(); ++i){
         tabStation[i].affiche();
     }
@@ -88,6 +76,29 @@ int main()
 
     for(int i = 0; i < tabTramway.size(); ++i){
         tabTramway[i].affiche();
+    }
+}
+
+int main()
+{
+    vector<Ligne> tabLigne;
+    vector<Station> tabStation;
+    vector<Tramway> tabTramway;
+    lectureFichier("donneesTram.txt", tabLigne, tabStation, tabTramway);
+
+    opengraphsize(800,800);
+    setbkcolor(WHITE);
+    setcolor(BLUE);
+    cleardevice();
+    affichage(tabLigne, tabStation, tabTramway);
+
+    while(true){
+        for(int i = 0; i < tabTramway.size(); ++i){
+            tabTramway[i].efface();
+            tabTramway[i].setPosition(tabTramway[i].getX()+1, tabTramway[i].getY()+1);
+            affichage(tabLigne, tabStation, tabTramway);
+        }
+    Sleep(10);
     }
 
     getch();
