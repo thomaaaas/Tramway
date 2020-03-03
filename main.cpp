@@ -95,7 +95,7 @@ int main()
     while(true){
         for(int i = 0; i < tabTramway.size(); ++i){
             tabTramway[i].efface();
-            tabTramway[i].setPosition(tabTramway[i].getX()+1, tabTramway[i].getY()+1);
+            tabTramway[i].setPosition(tabTramway[i].getX(), tabTramway[i].getY()+1);
             affichage(tabLigne, tabStation, tabTramway);
         }
     Sleep(10);
