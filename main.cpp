@@ -38,7 +38,6 @@ void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, vector<St
         donnes >> c >> xFin >> c >> yFin >>  c;
         cout << '(' << xFin << ';' << yFin << ')' << endl;
         tabLigne.push_back(Ligne(xDebut,yDebut,xFin,yFin));
-        //Fonction de Louis pour creer une Ligne
     }
     //Stations
     donnes >> temporaire >> nbStation;
@@ -48,7 +47,6 @@ void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, vector<St
         donnes >> c >> x >> c >> y >>  c;
         cout << '(' << x << ';' << y << ')' << endl;
         tabStation.push_back(Station(x,y));
-        //Fonction de Louis pour creer une Station
     }
     //Tram
     donnes >> temporaire >> nbTram;
@@ -58,7 +56,6 @@ void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, vector<St
         donnes >> c >> x >> c >> y >>  c;
         cout << '(' << x << ';' << y << ')' << endl;
         tabTramway.push_back(Tramway(0,0,x,y));
-        //Fonction de Louis pour creer un Tram
     }
     donnes >> temporaire;
     for(int i = 0; i < nbTram; ++i){
