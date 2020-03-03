@@ -1,3 +1,4 @@
+#include<vector>
 #ifndef TRAMWAY_STATION_H
 #define TRAMWAY_STATION_H
 class Station{

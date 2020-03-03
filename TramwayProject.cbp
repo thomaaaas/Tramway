@@ -38,6 +38,7 @@
 		<Unit filename="Station.h" />
 		<Unit filename="Tramway.cpp" />
 		<Unit filename="Tramway.h" />
+		<Unit filename="donnesTram.txt" />
 		<Unit filename="graphics.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="winbgi.cpp" />

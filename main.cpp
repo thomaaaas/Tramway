@@ -75,53 +75,25 @@ int main()
     vector<Station> tabStation;
     vector<Tramway> tabTramway;
     lectureFichier("donnesTram.txt", tabLigne, tabStation, tabTramway);
-/*    Tramway tram{2.0,12.0,0,0};
-    Station station1{0,0};
-    Station station2{400,400};
-    Station station3{700,700};
-
-    Ligne ligne{station1.getX(),station1.getY(),station3.getX(),station3.getY()};
 
     opengraphsize(800,800);
     setbkcolor(WHITE);
     setcolor(BLUE);
     cleardevice();
 
-    ligne.affiche();
-    station1.affiche();
-    station2.affiche();
-    station3.affiche();
+    for(int i = 0; i < tabStation.size(); ++i){
+        tabStation[i].affiche();
+    }
 
-    while(true){
-        while(tram.getX() <= station3.getX() && tram.getY() <= station3.getY()){
+    for(int i = 0; i < tabLigne.size(); ++i){
+        tabLigne[i].affiche();
+    }
 
-            tram.efface();
-            tram.setPosition(tram.getX()+tram.getVitesse(), tram.getY()+tram.getVitesse());
-            tram.affiche();
-
-            ligne.affiche();
-            station1.affiche();
-            station2.affiche();
-            station3.affiche();
-
-            Sleep(10);
-        }
-        while(tram.getX() >= station1.getX() && tram.getY() >= station1.getY()){
-
-            tram.efface();
-            tram.setPosition(tram.getX()-tram.getVitesse(), tram.getY()-tram.getVitesse());
-            tram.affiche();
-
-            ligne.affiche();
-            station1.affiche();
-            station2.affiche();
-            station3.affiche();
-
-            Sleep(10);
-        }
+    for(int i = 0; i < tabTramway.size(); ++i){
+        tabTramway[i].affiche();
     }
 
     getch();
-    closegraph();*/
+    closegraph();
     return 0;
 }

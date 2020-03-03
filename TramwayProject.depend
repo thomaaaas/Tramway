@@ -37,7 +37,7 @@
 
 1582097114 c:\users\norma\clionprojects\tramway\ligne.h
 
-1583241496 source:c:\users\norma\clionprojects\tramway\main.cpp
+1583244026 source:c:\users\norma\clionprojects\tramway\main.cpp
 	<iostream>
 	<fstream>
 	"Ligne.h"
@@ -49,14 +49,16 @@
 	<stdio.h>
 	<math.h>
 	"graphics.h"
+	<vector>
 
 1582097114 c:\users\norma\clionprojects\tramway\tramway.h
 
-1582033106 c:\users\norma\clionprojects\tramway\station.h
+1583243678 c:\users\norma\clionprojects\tramway\station.h
+	<vector>
 
 1582009738 c:\users\norma\clionprojects\tramway\graphics.h
 
-1582033169 source:c:\users\norma\clionprojects\tramway\station.cpp
+1583243675 source:c:\users\norma\clionprojects\tramway\station.cpp
 	"Station.h"
 	"graphics.h"
 
