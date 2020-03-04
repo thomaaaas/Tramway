@@ -32,8 +32,16 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ChainonArret.cpp" />
+		<Unit filename="ChainonArret.h" />
+		<Unit filename="ChainonTram.cpp" />
+		<Unit filename="ChainonTram.h" />
 		<Unit filename="Ligne.cpp" />
 		<Unit filename="Ligne.h" />
+		<Unit filename="ListeArret.cpp" />
+		<Unit filename="ListeArret.h" />
+		<Unit filename="ListeTram.cpp" />
+		<Unit filename="ListeTram.h" />
 		<Unit filename="Station.cpp" />
 		<Unit filename="Station.h" />
 		<Unit filename="Tramway.cpp" />

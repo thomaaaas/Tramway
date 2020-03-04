@@ -10,6 +10,8 @@
 #include <math.h>
 #include "graphics.h"
 #include <vector>
+#include "ChainonArret.h"
+#include "ListeArret.h"
 
 using namespace std;
 
@@ -68,6 +70,7 @@ void affichage(vector<Ligne> &tabLigne, vector<Station> &tabStation, vector<Tram
         tabStation[i].affiche();
     }
 
+
     for(int i = 0; i < tabLigne.size(); ++i){
         tabLigne[i].affiche();
     }
@@ -83,7 +86,13 @@ int main()
     vector<Station> tabStation;
     vector<Tramway> tabTramway;
     lectureFichier("donneesTram.txt", tabLigne, tabStation, tabTramway);
+    ListeArret arret{};
 
+    for(int i = 0; i < tabStation.size(); ++i){
+        arret.insererArret(tabStation[i]);
+    }
+    arret.affiche();
+    /*
     opengraphsize(800,800);
     setbkcolor(WHITE);
     setcolor(BLUE);
@@ -101,5 +110,6 @@ int main()
 
     getch();
     closegraph();
+    */
     return 0;
 }
