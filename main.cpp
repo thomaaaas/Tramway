@@ -93,6 +93,7 @@ int main()
     }
     arret.affiche();
     /*
+    ca avance bien
     opengraphsize(800,800);
     setbkcolor(WHITE);
     setcolor(BLUE);
