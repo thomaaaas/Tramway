@@ -21,7 +21,7 @@ ListeTram::~ListeTram()
 void ListeTram::affiche(){
     ChainonTram *c = t;
     while(c){
-        cout << c->getTramway().getX() << " " << c->getTramway().getY() << endl;
+        c->getTramway().affiche();
         c = c->suiv;
     }
 }

@@ -1,23 +1,16 @@
-NombreLignes: 2
+NombreLignes: 1
 CoordoneesLignes:
 	(10;1)
 	(10;400)
-	(200;1)
-	(200;400)
-NombreStations: 6 
+NombreStations: 3
 CoordoneesStations:
 	(10;1)
 	(10;200)
 	(10;400)
-	(200;1)
-	(200;200)
-	(200;400)
-NombreTrams: 4
+NombreTrams: 2
 CoordonesDepart:
 	(10;100)
 	(10;300)
-	(200;100)
-	(200;300)
 DirectionTrams: 
 	Aller
 	Retour

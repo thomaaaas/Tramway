@@ -1,29 +1,20 @@
 #include "Ligne.h"
 #include "graphics.h"
+#include "ListeArret.h"
+#include "ChainonArret.h"
+#include <iostream>
 
-Ligne::Ligne(int Xdebut, int YDebut, int XFin, int YFin){
-    d_XDebut = Xdebut;
-    d_YDebut = YDebut;
-    d_XFin = XFin;
-    d_YFin = YFin;
-}
+using namespace std;
 
-int Ligne::getXdebut() const{
-    return d_XDebut;
-}
+Ligne::Ligne(ListeArret &arret) : d_arret{arret}{
 
-int Ligne::getYdebut() const{
-    return d_YDebut;
-}
-
-int Ligne::getXfin() const{
-    return d_XFin;
-}
-
-int Ligne::getYfin() const{
-    return d_YFin;
 }
 
 void Ligne::affiche(){
-    line(d_XDebut, d_YDebut, d_XFin, d_YFin);
+    setcolor(BLUE);
+    ChainonArret *c = d_arret.t;
+    while(c -> suiv){
+        line(c->getStation().getX(), c->getStation().getY(), c->suiv->getStation().getX(), c->suiv->getStation().getY());
+        c = c->suiv;
+    }
 }

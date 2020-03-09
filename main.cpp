@@ -39,7 +39,7 @@ void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, ListeTram
         //cout << '(' << xDebut << ';' << yDebut << ')' << endl;
         donnees >> c >> xFin >> c >> yFin >>  c;
         //cout << '(' << xFin << ';' << yFin << ')' << endl;
-        tabLigne.push_back(Ligne(xDebut,yDebut,xFin,yFin));
+        //tabLigne.push_back(Ligne(xDebut,yDebut,xFin,yFin));
     }
     //Stations
     donnees >> temporaire >> nbStation;
@@ -67,19 +67,10 @@ void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, ListeTram
     }
 }
 
-void affichage(vector<Ligne> &tabLigne, vector<Station> &tabStation, vector<Tramway> &tabTramway){
-    for(int i = 0; i < tabStation.size(); ++i){
-        tabStation[i].affiche();
-    }
-
-
-    for(int i = 0; i < tabLigne.size(); ++i){
-        tabLigne[i].affiche();
-    }
-
-    for(int i = 0; i < tabTramway.size(); ++i){
-        tabTramway[i].affiche();
-    }
+void affichage(Ligne &ligne,ListeTram &listeTramway, ListeArret &listeArret){
+    ligne.affiche();
+    listeArret.affiche();
+    listeTramway.affiche();
 }
 
 int main()
@@ -90,19 +81,17 @@ int main()
     ListeTram listeTramway{};
 
     lectureFichier("donneesTram.txt", tabLigne, listeTramway, listeArret);
+    Ligne ligne{listeArret};
 
-
-
-    listeArret.affiche();
-    listeTramway.affiche();
-
-    /*
     opengraphsize(800,800);
     setbkcolor(WHITE);
     setcolor(BLUE);
     cleardevice();
-    affichage(tabLigne, tabStation, tabTramway);
 
+
+    affichage(ligne, listeTramway, listeArret);
+
+    /*
     while(true){
         for(int i = 0; i < tabTramway.size(); ++i){
             tabTramway[i].efface();
@@ -111,9 +100,10 @@ int main()
         }
     Sleep(10);
     }
-
+    */
     getch();
     closegraph();
-    */
+
+
     return 0;
 }

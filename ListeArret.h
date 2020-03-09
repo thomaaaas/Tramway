@@ -8,9 +8,11 @@ using namespace std;
 class ListeArret
 {
     friend class ChainonArret;
+    friend class Ligne;
     public:
         ListeArret();
         ~ListeArret();
+        ChainonArret* getTete() const;
         void insererArret(Station station);
         void affiche();
         //ChainonArret *arretTram(double x, double y);

@@ -19,10 +19,14 @@ ListeArret::~ListeArret()
 	}
 }
 
+ChainonArret* ListeArret::getTete() const{
+    return t;
+}
+
 void ListeArret::affiche(){
     ChainonArret *c = t;
     while(c){
-        cout << c->getStation().getX() << " " << c->getStation().getY() << endl;
+        c->getStation().affiche();
         c = c->suiv;
     }
 }

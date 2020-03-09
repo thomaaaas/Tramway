@@ -8,6 +8,7 @@ using namespace std;
 class ChainonArret
 {
     friend class ListeArret;
+    friend class Ligne;
     public:
         Station getStation() const;
     private:
