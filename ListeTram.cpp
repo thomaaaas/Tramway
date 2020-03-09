@@ -26,7 +26,7 @@ void ListeTram::affiche(){
     }
 }
 
-void ListeTram::insererTramway(Tramway &tramway)
+void ListeTram::insererTramway(Tramway tramway)
 {
 	ChainonTram *nc=new ChainonTram(tramway);
 	if(t==nullptr)

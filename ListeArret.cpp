@@ -1,5 +1,7 @@
 #include "ListeArret.h"
 #include "Station.h"
+#include <iostream>
+
 using namespace std;
 
 ListeArret::ListeArret() : t{nullptr}
@@ -25,7 +27,7 @@ void ListeArret::affiche(){
     }
 }
 
-void ListeArret::insererArret(Station &station)
+void ListeArret::insererArret(Station station)
 {
 	ChainonArret *nc=new ChainonArret(station);
 	if(t==nullptr)

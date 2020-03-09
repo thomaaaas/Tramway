@@ -17,7 +17,7 @@
 
 using namespace std;
 
-void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, vector<Station> &tabStation, vector<Tramway> &tabTramway){
+void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, ListeTram &listeTramway, ListeArret &listeArret){
     string temporaire;
     char c;
     bool sens;
@@ -31,39 +31,39 @@ void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, vector<St
     }
 
     donnees >> temporaire >> nbLignes;
-    cout << nbLignes << endl;
+    //cout << nbLignes << endl;
     donnees >> temporaire;
     //Lignes
     for(int i = 0; i < nbLignes; ++i){
         donnees >> c >> xDebut >> c >> yDebut >>  c;
-        cout << '(' << xDebut << ';' << yDebut << ')' << endl;
+        //cout << '(' << xDebut << ';' << yDebut << ')' << endl;
         donnees >> c >> xFin >> c >> yFin >>  c;
-        cout << '(' << xFin << ';' << yFin << ')' << endl;
+        //cout << '(' << xFin << ';' << yFin << ')' << endl;
         tabLigne.push_back(Ligne(xDebut,yDebut,xFin,yFin));
     }
     //Stations
     donnees >> temporaire >> nbStation;
-    cout << nbStation << endl;
+    //cout << nbStation << endl;
     donnees >> temporaire;
     for(int i = 0; i < nbStation; ++i){
         donnees >> c >> x >> c >> y >>  c;
-        cout << '(' << x << ';' << y << ')' << endl;
-        tabStation.push_back(Station(x,y));
+        //cout << '(' << x << ';' << y << ')' << endl;
+        listeArret.insererArret(Station(x,y));
     }
     //Tram
     donnees >> temporaire >> nbTram;
-    cout << nbTram << endl;
+    //cout << nbTram << endl;
     donnees >> temporaire;
     for(int i = 0; i < nbTram; ++i){
         donnees >> c >> x >> c >> y >>  c;
-        cout << '(' << x << ';' << y << ')' << endl;
-        tabTramway.push_back(Tramway(0,0,x,y));
+        //cout << '(' << x << ';' << y << ')' << endl;
+        listeTramway.insererTramway(Tramway(0,0,x,y));
     }
     donnees >> temporaire;
     for(int i = 0; i < nbTram; ++i){
         donnees >> temporaire;
         sens = temporaire == "Aller";
-        cout << sens << endl;
+        //cout << sens << endl;
     }
 }
 
@@ -85,21 +85,16 @@ void affichage(vector<Ligne> &tabLigne, vector<Station> &tabStation, vector<Tram
 int main()
 {
     vector<Ligne> tabLigne;
-    vector<Station> tabStation;
-    vector<Tramway> tabTramway;
-    lectureFichier("donneesTram.txt", tabLigne, tabStation, tabTramway);
-    ListeArret arret{};
-    ListeTram tramway{};
 
-    for(int i = 0; i < tabStation.size(); ++i){
-        arret.insererArret(tabStation[i]);
-    }
-    arret.affiche();
+    ListeArret listeArret{};
+    ListeTram listeTramway{};
 
-    for(int i = 0; i < tabTramway.size(); ++i){
-        tramway.insererTramway(tabTramway[i]);
-    }
-    tramway.affiche();
+    lectureFichier("donneesTram.txt", tabLigne, listeTramway, listeArret);
+
+
+
+    listeArret.affiche();
+    listeTramway.affiche();
 
     /*
     opengraphsize(800,800);

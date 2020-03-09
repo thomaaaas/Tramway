@@ -170,7 +170,7 @@
 1583776339 c:\users\norma\clionprojects\tramway\chainonarret.h
 	"Station.h"
 
-1583776339 c:\users\norma\clionprojects\tramway\listearret.h
+1583778668 c:\users\norma\clionprojects\tramway\listearret.h
 	"ChainonArret.h"
 	"Station.h"
 
@@ -181,15 +181,16 @@
 1583777718 c:\users\norma\clionprojects\tramway\chainontram.h
 	"Tramway.h"
 
-1583776339 source:c:\users\norma\clionprojects\tramway\listearret.cpp
+1583778703 source:c:\users\norma\clionprojects\tramway\listearret.cpp
 	"ListeArret.h"
 	"Station.h"
+	<iostream>
 
-1583778054 source:c:\users\norma\clionprojects\tramway\listetram.cpp
+1583778681 source:c:\users\norma\clionprojects\tramway\listetram.cpp
 	"ListeTram.h"
 	<iostream>
 
-1583778026 c:\users\norma\clionprojects\tramway\listetram.h
+1583778670 c:\users\norma\clionprojects\tramway\listetram.h
 	"Tramway.h"
 	"ChainonTram.h"
 
