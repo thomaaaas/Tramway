@@ -10,7 +10,7 @@ class ChainonArret
     friend class ListeArret;
     friend class Ligne;
     public:
-        Station getStation() const;
+        Station getStation();
     private:
         ChainonArret(Station &station);
         Station d_station;

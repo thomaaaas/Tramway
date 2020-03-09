@@ -9,7 +9,8 @@ class ListeTram
     public:
         ListeTram();
         ~ListeTram();
-        void insererTramway(Tramway tram);
+        void insererTramway(Tramway &tramway);
+        void avancer();
         void affiche();
     private:
         ChainonTram *t;

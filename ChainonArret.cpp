@@ -9,6 +9,6 @@ ChainonArret::ChainonArret(Station &station) : d_station{station}, suiv{nullptr}
     //ctor
 }
 
-Station ChainonArret::getStation() const{
+Station ChainonArret::getStation(){
     return d_station;
 }

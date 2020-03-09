@@ -13,7 +13,7 @@ class ListeArret
         ListeArret();
         ~ListeArret();
         ChainonArret* getTete() const;
-        void insererArret(Station station);
+        void insererArret(Station &station);
         void affiche();
         //ChainonArret *arretTram(double x, double y);
     private:

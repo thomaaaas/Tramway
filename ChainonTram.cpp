@@ -6,6 +6,6 @@ ChainonTram::ChainonTram(Tramway &tram) : d_tramway{tram}, suiv{nullptr}
     //ctor
 }
 
-Tramway ChainonTram::getTramway() const{
+Tramway ChainonTram::getTramway(){
     return d_tramway;
 }

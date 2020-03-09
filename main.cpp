@@ -48,7 +48,8 @@ void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, ListeTram
     for(int i = 0; i < nbStation; ++i){
         donnees >> c >> x >> c >> y >>  c;
         //cout << '(' << x << ';' << y << ')' << endl;
-        listeArret.insererArret(Station(x,y));
+        Station station{x,y};
+        listeArret.insererArret(station);
     }
     //Tram
     donnees >> temporaire >> nbTram;
@@ -57,7 +58,8 @@ void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, ListeTram
     for(int i = 0; i < nbTram; ++i){
         donnees >> c >> x >> c >> y >>  c;
         //cout << '(' << x << ';' << y << ')' << endl;
-        listeTramway.insererTramway(Tramway(0,0,x,y));
+        Tramway tramway{1,1,x,y};
+        listeTramway.insererTramway(tramway);
     }
     donnees >> temporaire;
     for(int i = 0; i < nbTram; ++i){
@@ -88,22 +90,18 @@ int main()
     setcolor(BLUE);
     cleardevice();
 
-
     affichage(ligne, listeTramway, listeArret);
-
+    //petit soucis ici
+    //listeTramway.avancer();
     /*
     while(true){
-        for(int i = 0; i < tabTramway.size(); ++i){
-            tabTramway[i].efface();
-            tabTramway[i].setPosition(tabTramway[i].getX(), tabTramway[i].getY()+1);
-            affichage(tabLigne, tabStation, tabTramway);
-        }
-    Sleep(10);
+        listeTramway.avancer();
+        affichage(ligne, listeTramway, listeArret);
+        Sleep(10);
     }
     */
     getch();
     closegraph();
-
 
     return 0;
 }

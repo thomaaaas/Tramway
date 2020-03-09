@@ -6,7 +6,7 @@ class ChainonTram
 {
     friend class ListeTram;
     public:
-        Tramway getTramway() const;
+        Tramway getTramway();
     private:
         ChainonTram(Tramway &tramway);
         Tramway d_tramway;

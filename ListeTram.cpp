@@ -26,7 +26,24 @@ void ListeTram::affiche(){
     }
 }
 
-void ListeTram::insererTramway(Tramway tramway)
+void ListeTram::avancer(){
+    ChainonTram *c = t;
+    int x,y;
+    double vitesse;
+    while(c){
+        x = c->getTramway().getX();
+        y = c->getTramway().getY();
+        vitesse = c->getTramway().getVitesse();
+        cout << x << " " << y << endl;
+        c->getTramway().setPosition(x+vitesse, y+vitesse);
+        x = c->getTramway().getX();
+        y = c->getTramway().getY();
+        cout << x << " " << y << endl;
+        c = c->suiv;
+    }
+}
+
+void ListeTram::insererTramway(Tramway &tramway)
 {
 	ChainonTram *nc=new ChainonTram(tramway);
 	if(t==nullptr)
