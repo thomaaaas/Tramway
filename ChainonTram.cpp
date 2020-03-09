@@ -1,11 +1,11 @@
 #include "ChainonTram.h"
+#include "Tramway.h"
 
-ChainonTram::ChainonTram()
+ChainonTram::ChainonTram(Tramway &tram) : d_tramway{tram}, suiv{nullptr}
 {
     //ctor
 }
 
-ChainonTram::~ChainonTram()
-{
-    //dtor
+Tramway ChainonTram::getTramway() const{
+    return d_tramway;
 }

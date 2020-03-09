@@ -12,6 +12,8 @@
 #include <vector>
 #include "ChainonArret.h"
 #include "ListeArret.h"
+#include "ListeTram.h"
+#include "ChainonTram.h"
 
 using namespace std;
 
@@ -87,13 +89,19 @@ int main()
     vector<Tramway> tabTramway;
     lectureFichier("donneesTram.txt", tabLigne, tabStation, tabTramway);
     ListeArret arret{};
+    ListeTram tramway{};
 
     for(int i = 0; i < tabStation.size(); ++i){
         arret.insererArret(tabStation[i]);
     }
     arret.affiche();
+
+    for(int i = 0; i < tabTramway.size(); ++i){
+        tramway.insererTramway(tabTramway[i]);
+    }
+    tramway.affiche();
+
     /*
-    ca avance bien
     opengraphsize(800,800);
     setbkcolor(WHITE);
     setcolor(BLUE);
