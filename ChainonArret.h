@@ -1,7 +1,7 @@
 #ifndef CHAINONARRET_H
 #define CHAINONARRET_H
 
-#include "Station.h"
+#include "Arret.h"
 
 using namespace std;
 
@@ -10,10 +10,10 @@ class ChainonArret
     friend class ListeArret;
     friend class Ligne;
     public:
-        Station* getStation();
+        Arret* getArret();
     private:
-        ChainonArret(Station *station);
-        Station *d_station;
+        ChainonArret(Arret *arret);
+        Arret *d_arret;
         ChainonArret *suiv;
         ChainonArret *prec;
 };

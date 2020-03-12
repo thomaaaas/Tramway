@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Arret.cpp" />
+		<Unit filename="Arret.h" />
 		<Unit filename="ChainonArret.cpp" />
 		<Unit filename="ChainonArret.h" />
 		<Unit filename="ChainonTram.cpp" />

@@ -1,9 +1,9 @@
 #include<vector>
-#ifndef TRAMWAY_STATION_H
-#define TRAMWAY_STATION_H
-class Station{
+#ifndef TRAMWAY_ARRET_H
+#define TRAMWAY_ARRET_H
+class Arret{
 public:
-    Station(int x, int y);
+    Arret(int x, int y);
     int getX() const;
     int getY() const;
     void setPosition(int x, int y);
@@ -11,4 +11,4 @@ public:
 private:
     int d_X, d_Y;
 };
-#endif //TRAMWAY_STATION_H
+#endif //TRAMWAY_ARRET_H

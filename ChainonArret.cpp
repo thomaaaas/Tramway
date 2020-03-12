@@ -1,15 +1,15 @@
 #include "ChainonArret.h"
-#include "Station.h"
+#include "Arret.h"
 #include "ListeArret.h"
 #include <iostream>
 
 using namespace std;
 
-ChainonArret::ChainonArret(Station *station) : d_station{station}, suiv{nullptr}, prec{nullptr}
+ChainonArret::ChainonArret(Arret *arret) : d_arret{arret}, suiv{nullptr}, prec{nullptr}
 {
     //ctor
 }
 
-Station* ChainonArret::getStation(){
-    return d_station;
+Arret* ChainonArret::getArret(){
+    return d_arret;
 }

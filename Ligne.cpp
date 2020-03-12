@@ -14,7 +14,7 @@ void Ligne::affiche(){
     setcolor(BLUE);
     ChainonArret *c = d_arret.t;
     while(c -> suiv){
-        line(c->getStation()->getX(), c->getStation()->getY(), c->suiv->getStation()->getX(), c->suiv->getStation()->getY());
+        line(c->getArret()->getX(), c->getArret()->getY(), c->suiv->getArret()->getX(), c->suiv->getArret()->getY());
         c = c->suiv;
     }
 }

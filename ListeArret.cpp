@@ -1,5 +1,5 @@
 #include "ListeArret.h"
-#include "Station.h"
+#include "Arret.h"
 #include <iostream>
 
 using namespace std;
@@ -26,14 +26,14 @@ ChainonArret* ListeArret::getTete() const{
 void ListeArret::affiche(){
     ChainonArret *c = t;
     while(c){
-        c->getStation()->affiche();
+        c->getArret()->affiche();
         c = c->suiv;
     }
 }
 
-void ListeArret::insererArret(Station *station)
+void ListeArret::insererArret(Arret *arret)
 {
-	ChainonArret *nc=new ChainonArret(station);
+	ChainonArret *nc=new ChainonArret(arret);
 	if(t==nullptr)
     {
         t=nc;

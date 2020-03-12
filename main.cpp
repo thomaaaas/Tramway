@@ -2,7 +2,7 @@
 #include <fstream>
 #include "Ligne.h"
 #include "graphics.h"
-#include "Station.h"
+#include "Arret.h"
 #include "Tramway.h"
 #include <windows.h>
 #include <stddef.h>
@@ -48,8 +48,8 @@ void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, ListeTram
     for(int i = 0; i < nbStation; ++i){
         donnees >> c >> x >> c >> y >>  c;
         //cout << '(' << x << ';' << y << ')' << endl;
-        Station *station = new Station{x,y};
-        listeArret.insererArret(station);
+        Arret *arret = new Arret{x,y};
+        listeArret.insererArret(arret);
     }
     //Tram
     donnees >> temporaire >> nbTram;

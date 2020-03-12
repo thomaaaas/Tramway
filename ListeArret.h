@@ -1,7 +1,7 @@
 #ifndef LISTEARRET_H
 #define LISTEARRET_H
 #include "ChainonArret.h"
-#include "Station.h"
+#include "Arret.h"
 
 using namespace std;
 
@@ -13,7 +13,7 @@ class ListeArret
         ListeArret();
         ~ListeArret();
         ChainonArret* getTete() const;
-        void insererArret(Station *station);
+        void insererArret(Arret *arret);
         void affiche();
         //ChainonArret *arretTram(double x, double y);
     private:
