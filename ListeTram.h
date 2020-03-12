@@ -12,6 +12,7 @@ class ListeTram
         void insererTramway(Tramway *tramway);
         void avancer();
         void affiche();
+        void effacer();
     private:
         ChainonTram *t;
 };

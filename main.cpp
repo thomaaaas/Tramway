@@ -91,10 +91,12 @@ int main()
     cleardevice();
 
     affichage(ligne, listeTramway, listeArret);
+
     while(true){
+        listeTramway.effacer();
         listeTramway.avancer();
         affichage(ligne, listeTramway, listeArret);
-        Sleep(10);
+        Sleep(50);
     }
 
     getch();

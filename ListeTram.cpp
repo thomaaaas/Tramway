@@ -26,6 +26,14 @@ void ListeTram::affiche(){
     }
 }
 
+void ListeTram::effacer(){
+    ChainonTram *c = t;
+    while(c){
+        c->getTramway()->efface();
+        c = c->suiv;
+    }
+}
+
 void ListeTram::avancer(){
     ChainonTram *c = t;
     double x,y;
@@ -47,7 +55,6 @@ si coord = alors stop quelque s
 sinon avance de vitesse avec ligne tracer entre station (equation)
 if sens = true -> station = suiv (+ vitesse)
 if sens = false -> station = prec (-vitesse)
-modifier constructeur tram
 */
 void ListeTram::insererTramway(Tramway *tramway)
 {
