@@ -6,7 +6,7 @@ NombreStations: 3
 CoordoneesStations:
 	(10;1)
 	(10;200)
-	(10;400)
+	(100;400)
 NombreTrams: 2
 CoordonesDepart:
 	(10;100)
