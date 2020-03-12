@@ -9,7 +9,7 @@ class ListeTram
     public:
         ListeTram();
         ~ListeTram();
-        void insererTramway(Tramway &tramway);
+        void insererTramway(Tramway *tramway);
         void avancer();
         void affiche();
     private:

@@ -6,10 +6,10 @@ class ChainonTram
 {
     friend class ListeTram;
     public:
-        Tramway getTramway();
+        Tramway* getTramway();
     private:
-        ChainonTram(Tramway &tramway);
-        Tramway d_tramway;
+        ChainonTram(Tramway *tramway);
+        Tramway *d_tramway;
         ChainonTram *suiv;
 };
 

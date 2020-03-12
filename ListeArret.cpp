@@ -26,12 +26,12 @@ ChainonArret* ListeArret::getTete() const{
 void ListeArret::affiche(){
     ChainonArret *c = t;
     while(c){
-        c->getStation().affiche();
+        c->getStation()->affiche();
         c = c->suiv;
     }
 }
 
-void ListeArret::insererArret(Station &station)
+void ListeArret::insererArret(Station *station)
 {
 	ChainonArret *nc=new ChainonArret(station);
 	if(t==nullptr)

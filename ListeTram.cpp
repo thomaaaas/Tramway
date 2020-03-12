@@ -21,29 +21,35 @@ ListeTram::~ListeTram()
 void ListeTram::affiche(){
     ChainonTram *c = t;
     while(c){
-        c->getTramway().affiche();
+        c->getTramway()->affiche();
         c = c->suiv;
     }
 }
 
 void ListeTram::avancer(){
     ChainonTram *c = t;
-    int x,y;
+    double x,y;
     double vitesse;
     while(c){
-        x = c->getTramway().getX();
-        y = c->getTramway().getY();
-        vitesse = c->getTramway().getVitesse();
-        cout << x << " " << y << endl;
-        c->getTramway().setPosition(x+vitesse, y+vitesse);
-        x = c->getTramway().getX();
-        y = c->getTramway().getY();
-        cout << x << " " << y << endl;
+        x = c->getTramway()->getX();
+        y = c->getTramway()->getY();
+        vitesse = c->getTramway()->getVitesse();
+        c->getTramway()->setPosition(x+vitesse, y+vitesse);
+        x = c->getTramway()->getX();
+        y = c->getTramway()->getY();
         c = c->suiv;
     }
 }
-
-void ListeTram::insererTramway(Tramway &tramway)
+/*
+vérifier distance tram suivant stop si trop inf
+pointeur arret sur tram
+si coord = alors stop quelque s
+sinon avance de vitesse avec ligne tracer entre station (equation)
+if sens = true -> station = suiv (+ vitesse)
+if sens = false -> station = prec (-vitesse)
+modifier constructeur tram
+*/
+void ListeTram::insererTramway(Tramway *tramway)
 {
 	ChainonTram *nc=new ChainonTram(tramway);
 	if(t==nullptr)

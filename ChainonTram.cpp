@@ -1,11 +1,14 @@
 #include "ChainonTram.h"
 #include "Tramway.h"
+#include<iostream>
 
-ChainonTram::ChainonTram(Tramway &tram) : d_tramway{tram}, suiv{nullptr}
+using namespace std;
+
+ChainonTram::ChainonTram(Tramway *tram) : d_tramway{tram}, suiv{nullptr}
 {
-    //ctor
+
 }
 
-Tramway ChainonTram::getTramway(){
+Tramway* ChainonTram::getTramway(){
     return d_tramway;
 }

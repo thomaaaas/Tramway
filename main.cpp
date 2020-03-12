@@ -16,7 +16,7 @@
 #include "ChainonTram.h"
 
 using namespace std;
-
+//regarder tramway.h et faire comme le constrcuteur (vitesse, distance, x, y)
 void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, ListeTram &listeTramway, ListeArret &listeArret){
     string temporaire;
     char c;
@@ -48,7 +48,7 @@ void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, ListeTram
     for(int i = 0; i < nbStation; ++i){
         donnees >> c >> x >> c >> y >>  c;
         //cout << '(' << x << ';' << y << ')' << endl;
-        Station station{x,y};
+        Station *station = new Station{x,y};
         listeArret.insererArret(station);
     }
     //Tram
@@ -58,7 +58,7 @@ void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, ListeTram
     for(int i = 0; i < nbTram; ++i){
         donnees >> c >> x >> c >> y >>  c;
         //cout << '(' << x << ';' << y << ')' << endl;
-        Tramway tramway{1,1,x,y};
+        Tramway *tramway = new Tramway{1.0,1.0,x,y};
         listeTramway.insererTramway(tramway);
     }
     donnees >> temporaire;
@@ -91,15 +91,12 @@ int main()
     cleardevice();
 
     affichage(ligne, listeTramway, listeArret);
-    //petit soucis ici
-    //listeTramway.avancer();
-    /*
     while(true){
         listeTramway.avancer();
         affichage(ligne, listeTramway, listeArret);
         Sleep(10);
     }
-    */
+
     getch();
     closegraph();
 
