@@ -16,91 +16,96 @@
 #include "ChainonTram.h"
 
 using namespace std;
-//regarder tramway.h et faire comme le constrcuteur (vitesse, distance, x, y)
-void lectureFichier(string const &nomFichier, vector<Ligne> &tabLigne, ListeTram &listeTramway, ListeArret &listeArret){
+
+struct liste{
+    ListeArret *arret;
+    ListeTram *tramway;
+    Ligne *ligne;
+};
+
+void lectureFichier(string const &nomFichier, vector <liste> &dataListe){
     string temporaire;
     char c;
     bool sens;
-    int xDebut, yDebut, xFin, yFin, x, y;
-    int nbLignes, nbStation, nbTram;
+    double vitesse, distanceMin;
+    int x, y, nbLignes, nbArret, nbTram;
     ifstream donnees;
+
     donnees.open(nomFichier);
     if(!donnees.is_open()){
         cout << "Le fichier n'a pas pu s'ouvrir." << endl;
         return;
     }
+    donnees >> temporaire >> nbLignes >> temporaire;
 
-    donnees >> temporaire >> nbLignes;
-    //cout << nbLignes << endl;
-    donnees >> temporaire;
-    //Lignes
+    dataListe.resize(nbLignes);
+
     for(int i = 0; i < nbLignes; ++i){
-        donnees >> c >> xDebut >> c >> yDebut >>  c;
-        //cout << '(' << xDebut << ';' << yDebut << ')' << endl;
-        donnees >> c >> xFin >> c >> yFin >>  c;
-        //cout << '(' << xFin << ';' << yFin << ')' << endl;
-        //tabLigne.push_back(Ligne(xDebut,yDebut,xFin,yFin));
-    }
-    //Stations
-    donnees >> temporaire >> nbStation;
-    //cout << nbStation << endl;
-    donnees >> temporaire;
-    for(int i = 0; i < nbStation; ++i){
-        donnees >> c >> x >> c >> y >>  c;
-        //cout << '(' << x << ';' << y << ')' << endl;
-        Arret *arret = new Arret{x,y};
-        listeArret.insererArret(arret);
-    }
-    //Tram
-    donnees >> temporaire >> nbTram;
-    //cout << nbTram << endl;
-    donnees >> temporaire;
-    for(int i = 0; i < nbTram; ++i){
-        donnees >> c >> x >> c >> y >>  c;
-        //cout << '(' << x << ';' << y << ')' << endl;
-        Tramway *tramway = new Tramway{1.0,1.0,x,y};
-        listeTramway.insererTramway(tramway);
-    }
-    donnees >> temporaire;
-    for(int i = 0; i < nbTram; ++i){
+
+        ListeArret *listeArret = new ListeArret{};
+        ListeTram *listeTramway = new ListeTram{};
+
+        //Arrets
+        donnees >> nbArret >> temporaire;
+        for(int i = 0; i < nbArret; ++i){
+            donnees >> c >> x >> c >> y >>  c;
+            Arret *arret = new Arret{x,y};
+            listeArret->insererArret(arret);
+        }
+
+        //Tram
+        donnees >> temporaire >> nbTram;
         donnees >> temporaire;
-        sens = temporaire == "Aller";
-        //cout << sens << endl;
+        for(int i = 0; i < nbTram; ++i){
+            donnees >> c >> vitesse >> c >> distanceMin >> c >> x >> c >> y >> c;
+            Tramway *tramway = new Tramway{vitesse,distanceMin,x,y};
+            listeTramway->insererTramway(tramway);
+        }
+        donnees >> temporaire;
+        for(int i = 0; i < nbTram; ++i){
+            donnees >> temporaire;
+            sens = temporaire == "Aller";
+        }
+
+        donnees >> temporaire;
+        Ligne *ligne = new Ligne(*listeArret);
+        dataListe[i].arret = listeArret;
+        dataListe[i].tramway = listeTramway;
+        dataListe[i].ligne = ligne;
     }
 }
 
-void affichage(Ligne &ligne,ListeTram &listeTramway, ListeArret &listeArret){
-    ligne.affiche();
-    listeArret.affiche();
-    listeTramway.affiche();
+void affichage(vector<liste> &dataListe){
+    for(int i = 0; i < dataListe.size(); ++i){
+        dataListe[i].arret -> affiche();
+        dataListe[i].ligne -> affiche();
+        dataListe[i].tramway -> affiche();
+    }
 }
 
 int main()
 {
-    vector<Ligne> tabLigne;
+    vector<liste> dataListe;
 
-    ListeArret listeArret{};
-    ListeTram listeTramway{};
-
-    lectureFichier("donneesTram.txt", tabLigne, listeTramway, listeArret);
-    Ligne ligne{listeArret};
+    lectureFichier("donneesTram.txt", dataListe);
 
     opengraphsize(800,800);
     setbkcolor(WHITE);
     setcolor(BLUE);
     cleardevice();
 
-    affichage(ligne, listeTramway, listeArret);
+    affichage(dataListe);
 
     while(true){
-        listeTramway.effacer();
-        listeTramway.avancer();
-        affichage(ligne, listeTramway, listeArret);
+        for(int i = 0; i < dataListe.size(); ++i){
+            dataListe[i].tramway->effacer();
+            dataListe[i].tramway->avancer();
+            affichage(dataListe);
+        }
         Sleep(50);
     }
 
     getch();
     closegraph();
-
     return 0;
 }
