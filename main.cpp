@@ -68,19 +68,19 @@ void lectureFichier(string const &nomFichier, vector <liste> &dataListe){
         }
 
         donnees >> temporaire;
+
         Ligne *ligne = new Ligne(*listeArret);
+
         dataListe[i].arret = listeArret;
         dataListe[i].tramway = listeTramway;
         dataListe[i].ligne = ligne;
     }
 }
 
-void affichage(vector<liste> &dataListe){
-    for(int i = 0; i < dataListe.size(); ++i){
+void affichage(vector<liste> &dataListe, int i){
         dataListe[i].arret -> affiche();
         dataListe[i].ligne -> affiche();
         dataListe[i].tramway -> affiche();
-    }
 }
 
 int main()
@@ -94,13 +94,11 @@ int main()
     setcolor(BLUE);
     cleardevice();
 
-    affichage(dataListe);
-
     while(true){
         for(int i = 0; i < dataListe.size(); ++i){
             dataListe[i].tramway->effacer();
             dataListe[i].tramway->avancer();
-            affichage(dataListe);
+            affichage(dataListe,i);
         }
         Sleep(50);
     }
