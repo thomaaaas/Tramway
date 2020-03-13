@@ -57,18 +57,11 @@ void lectureFichier(string const &nomFichier, vector <liste> &dataListe){
         donnees >> temporaire >> nbTram;
         donnees >> temporaire;
         for(int i = 0; i < nbTram; ++i){
-            donnees >> c >> vitesse >> c >> distanceMin >> c >> x >> c >> y >> c;
-            Tramway *tramway = new Tramway{vitesse,distanceMin,x,y};
+            donnees >> c >> vitesse >> c >> distanceMin >> c >> x >> c >> y >> c >> sens >> c;
+            Tramway *tramway = new Tramway{vitesse,distanceMin,x,y,sens};
             listeTramway->insererTramway(tramway);
         }
         donnees >> temporaire;
-        for(int i = 0; i < nbTram; ++i){
-            donnees >> temporaire;
-            sens = temporaire == "Aller";
-        }
-
-        donnees >> temporaire;
-
         Ligne *ligne = new Ligne(*listeArret);
 
         dataListe[i].arret = listeArret;
@@ -105,5 +98,6 @@ int main()
 
     getch();
     closegraph();
+
     return 0;
 }

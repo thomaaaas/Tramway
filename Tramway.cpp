@@ -6,11 +6,12 @@ Tramway::Tramway():
     d_vitesse{0.0}
 {}
 
-Tramway::Tramway(double vitesse, double distanceMin, int x, int y):
+Tramway::Tramway(double vitesse, double distanceMin, int x, int y, bool sens):
     d_vitesse{vitesse},
     d_distanceMin{distanceMin},
     d_X{x},
-    d_Y{y}
+    d_Y{y},
+    d_sens{sens}
 {}
 
 double Tramway::getDistanceMin() const {

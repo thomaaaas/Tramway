@@ -3,7 +3,7 @@
 class Tramway{
 public:
     Tramway();
-    Tramway(double vitesse, double distanceMin, int positionX, int positionY);
+    Tramway(double vitesse, double distanceMin, int positionX, int positionY, bool sens);
     double getVitesse() const;
     double getDistanceMin() const;
     int getX() const;

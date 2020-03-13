@@ -59,7 +59,7 @@
 	"ListeTram.h"
 	"ChainonTram.h"
 
-1584007248 c:\users\norma\clionprojects\tramway\tramway.h
+1584102980 c:\users\norma\clionprojects\tramway\tramway.h
 
 1583258505 c:\users\norma\clionprojects\tramway\station.h
 	<vector>
@@ -70,7 +70,7 @@
 	"Station.h"
 	"graphics.h"
 
-1584007260 source:c:\users\norma\clionprojects\tramway\tramway.cpp
+1584102748 source:c:\users\norma\clionprojects\tramway\tramway.cpp
 	"Tramway.h"
 	"graphics.h"
 
