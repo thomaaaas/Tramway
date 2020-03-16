@@ -11,6 +11,8 @@ class ChainonArret
     friend class Ligne;
     public:
         Arret* getArret();
+        ChainonArret *getSuiv() const;
+        ChainonArret * getPrec() const;
     private:
         ChainonArret(Arret *arret);
         Arret *d_arret;

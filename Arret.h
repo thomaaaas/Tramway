@@ -3,12 +3,12 @@
 #define TRAMWAY_ARRET_H
 class Arret{
 public:
-    Arret(int x, int y);
-    int getX() const;
-    int getY() const;
-    void setPosition(int x, int y);
+    Arret(double x, double y);
+    double getX() const;
+    double getY() const;
+    void setPosition(double x, double y);
     void affiche();
 private:
-    int d_X, d_Y;
+    double d_X, d_Y;
 };
 #endif //TRAMWAY_ARRET_H

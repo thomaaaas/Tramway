@@ -6,12 +6,14 @@ Tramway::Tramway():
     d_vitesse{0.0}
 {}
 
-Tramway::Tramway(double vitesse, double distanceMin, int x, int y, bool sens):
+Tramway::Tramway(double vitesse, double distanceMin, double x, double y, bool sens):
     d_vitesse{vitesse},
     d_distanceMin{distanceMin},
     d_X{x},
     d_Y{y},
-    d_sens{sens}
+    d_sens{sens},
+    tempsArret{0.0},
+    onMarche(true)
 {}
 
 double Tramway::getDistanceMin() const {
@@ -22,16 +24,30 @@ double Tramway::getVitesse() const {
     return d_vitesse;
 }
 
-int Tramway::getX() const{
+double Tramway::getX() const{
     return d_X;
 }
 
-int Tramway::getY() const{
+double Tramway::getY() const{
     return d_Y;
 }
 
 bool Tramway::getSens() const{
     return d_sens;
+}
+
+double Tramway::getTempsArret() const{
+    return tempsArret;
+}
+
+bool Tramway::getonMarche () const
+{
+    return onMarche;
+}
+
+
+void Tramway::setTempsArret( double temps){
+    tempsArret = temps;
 }
 
 void Tramway::setVitesse(double valeur){
@@ -42,7 +58,7 @@ void Tramway::setDistanceMin(double valeur) {
     d_distanceMin = valeur;
 }
 
-void Tramway::setPosition(int x, int y){
+void Tramway::setPosition(double x, double y){
     d_X = x;
     d_Y = y;
 }
@@ -50,6 +66,11 @@ void Tramway::setPosition(int x, int y){
 void Tramway::setSens(bool sens){
     d_sens = sens;
 }
+void Tramway::setonMarche(bool marche)
+{
+    onMarche = marche;
+}
+
 
 void Tramway::affiche(){
     setcolor(RED);

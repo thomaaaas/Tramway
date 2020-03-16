@@ -1,20 +1,20 @@
 #include "Arret.h"
 #include "graphics.h"
 
-Arret::Arret(int x, int y):
+Arret::Arret(double x, double y):
     d_X{x},
     d_Y{y}
 {}
 
-Arret::getX() const{
+double Arret::getX() const{
     return d_X;
 }
 
-Arret::getY() const{
+double Arret::getY() const{
     return d_Y;
 }
 
-void Arret::setPosition(int x, int y){
+void Arret::setPosition(double x, double y){
     d_X = x;
     d_Y = y;
 }

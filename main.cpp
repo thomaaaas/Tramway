@@ -28,7 +28,8 @@ void lectureFichier(string const &nomFichier, vector <liste> &dataListe){
     char c;
     bool sens;
     double vitesse, distanceMin;
-    int x, y, nbLignes, nbArret, nbTram;
+    int nbLignes, nbArret, nbTram;
+    double  x, y;
     ifstream donnees;
 
     donnees.open(nomFichier);
@@ -62,7 +63,7 @@ void lectureFichier(string const &nomFichier, vector <liste> &dataListe){
             listeTramway->insererTramway(tramway);
         }
         donnees >> temporaire;
-        Ligne *ligne = new Ligne(*listeArret);
+        Ligne *ligne = new Ligne(listeArret);
 
         dataListe[i].arret = listeArret;
         dataListe[i].tramway = listeTramway;
@@ -90,10 +91,10 @@ int main()
     while(true){
         for(int i = 0; i < dataListe.size(); ++i){
             dataListe[i].tramway->effacer();
-            dataListe[i].tramway->avancer();
+            dataListe[i].tramway->avancer(dataListe[i].ligne);
             affichage(dataListe,i);
         }
-        Sleep(50);
+        Sleep(60);
     }
 
     getch();

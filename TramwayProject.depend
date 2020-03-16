@@ -207,3 +207,93 @@
 	"Arret.h"
 	"graphics.h"
 
+1584380405 source:c:\users\elmas\clionprojects\tramwaygit\chainonarret.cpp
+	"ChainonArret.h"
+	"Arret.h"
+	"ListeArret.h"
+	<iostream>
+
+1584380405 c:\users\elmas\clionprojects\tramwaygit\chainonarret.h
+	"Arret.h"
+
+1584372950 c:\users\elmas\clionprojects\tramwaygit\arret.h
+	<vector>
+
+1584361385 c:\users\elmas\clionprojects\tramwaygit\listearret.h
+	"ChainonArret.h"
+	"Arret.h"
+
+1584367367 source:c:\users\elmas\clionprojects\tramwaygit\chainontram.cpp
+	"ChainonTram.h"
+	"Tramway.h"
+	<iostream>
+	"ChainonArret.h"
+
+1584367367 c:\users\elmas\clionprojects\tramwaygit\chainontram.h
+	"Tramway.h"
+	"Arret.h"
+	"ChainonArret.h"
+
+1584378442 c:\users\elmas\clionprojects\tramwaygit\tramway.h
+
+1584381493 source:c:\users\elmas\clionprojects\tramwaygit\ligne.cpp
+	"Ligne.h"
+	"graphics.h"
+	"ListeArret.h"
+	"ChainonArret.h"
+	<iostream>
+
+1584374286 c:\users\elmas\clionprojects\tramwaygit\ligne.h
+	"ListeArret.h"
+
+1583247789 c:\users\elmas\clionprojects\tramwaygit\graphics.h
+
+1584360526 source:c:\users\elmas\clionprojects\tramwaygit\listearret.cpp
+	"ListeArret.h"
+	"Arret.h"
+	<iostream>
+
+1584381960 source:c:\users\elmas\clionprojects\tramwaygit\listetram.cpp
+	"ListeTram.h"
+	<iostream>
+	<cmath>
+	<vector>
+
+1584379811 c:\users\elmas\clionprojects\tramwaygit\listetram.h
+	"Tramway.h"
+	"ChainonTram.h"
+	"Ligne.h"
+
+1584381052 source:c:\users\elmas\clionprojects\tramwaygit\main.cpp
+	<iostream>
+	<fstream>
+	"Ligne.h"
+	"graphics.h"
+	"Arret.h"
+	"Tramway.h"
+	<windows.h>
+	<stddef.h>
+	<stdio.h>
+	<math.h>
+	"graphics.h"
+	<vector>
+	"ChainonArret.h"
+	"ListeArret.h"
+	"ListeTram.h"
+	"ChainonTram.h"
+
+1584378476 source:c:\users\elmas\clionprojects\tramwaygit\tramway.cpp
+	"Tramway.h"
+	"graphics.h"
+
+1583247789 source:c:\users\elmas\clionprojects\tramwaygit\winbgi.cpp
+	<windows.h>
+	<stddef.h>
+	<stdio.h>
+	<math.h>
+	"graphics.h"
+
+1584373054 source:c:\users\elmas\clionprojects\tramwaygit\arret.cpp
+	"Arret.h"
+	"graphics.h"
+

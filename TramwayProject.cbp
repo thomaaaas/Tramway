@@ -44,8 +44,6 @@
 		<Unit filename="ListeArret.h" />
 		<Unit filename="ListeTram.cpp" />
 		<Unit filename="ListeTram.h" />
-		<Unit filename="Station.cpp" />
-		<Unit filename="Station.h" />
 		<Unit filename="Tramway.cpp" />
 		<Unit filename="Tramway.h" />
 		<Unit filename="graphics.h" />

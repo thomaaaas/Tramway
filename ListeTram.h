@@ -2,6 +2,7 @@
 #define LISTETRAM_H
 #include "Tramway.h"
 #include "ChainonTram.h"
+#include "Ligne.h"
 
 class ListeTram
 {
@@ -10,9 +11,10 @@ class ListeTram
         ListeTram();
         ~ListeTram();
         void insererTramway(Tramway *tramway);
-        void avancer();
+        void avancer(Ligne *ligne);
         void affiche();
         void effacer();
+        void Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<double> &coord);
     private:
         ChainonTram *t;
 };

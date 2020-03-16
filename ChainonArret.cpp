@@ -13,3 +13,13 @@ ChainonArret::ChainonArret(Arret *arret) : d_arret{arret}, suiv{nullptr}, prec{n
 Arret* ChainonArret::getArret(){
     return d_arret;
 }
+
+ChainonArret* ChainonArret::getSuiv() const
+{
+    return suiv;
+}
+
+ChainonArret* ChainonArret::getPrec() const
+{
+    return prec;
+}
