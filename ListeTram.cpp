@@ -78,22 +78,22 @@ void ListeTram::Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<doub
 bool ListeTram::distance(ChainonTram *tram)
 {
     ChainonTram *c;
-    if(tram->suiv == nullptr)
-    {
-        c = t;
-    }
-    else
-    {
-        c = tram->suiv;
-    }
-    double d = sqrt(pow(tram->getTramway()->getX() - c->getTramway()->getX(),2) + pow(tram->getTramway()->getY()-c->getTramway()->getY(),2));
-    if(tram->getTramway()->getSens() == c->getTramway()->getSens())
-    {
-        if (d < tram->getTramway()->getDistanceMin())
+        if(tram->suiv == nullptr)
         {
-            return false;
+            c = t;
         }
-    }
+        else
+        {
+            c = tram->suiv;
+        }
+        double d = sqrt(pow(tram->getTramway()->getX() - c->getTramway()->getX(),2) + pow(tram->getTramway()->getY()-c->getTramway()->getY(),2));
+        if(tram->getTramway()->getSens() == c->getTramway()->getSens())
+        {
+            if (d < tram->getTramway()->getDistanceMin())
+            {
+                return false;
+            }
+        }
     return true;
 }
 
