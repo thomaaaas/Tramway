@@ -228,28 +228,31 @@
 	"ChainonArret.h"
 	"Arret.h"
 
-1584367367 source:c:\users\elmas\clionprojects\tramwaygit\chainontram.cpp
+1584544214 source:c:\users\elmas\clionprojects\tramwaygit\chainontram.cpp
 	"ChainonTram.h"
 	"Tramway.h"
 	<iostream>
 	"ChainonArret.h"
 
-1584367367 c:\users\elmas\clionprojects\tramwaygit\chainontram.h
+1584544214 c:\users\elmas\clionprojects\tramwaygit\chainontram.h
 	"Tramway.h"
 	"Arret.h"
 	"ChainonArret.h"
 
 1584378442 c:\users\elmas\clionprojects\tramwaygit\tramway.h
 
-1584381493 source:c:\users\elmas\clionprojects\tramwaygit\ligne.cpp
+1584545645 source:c:\users\elmas\clionprojects\tramwaygit\ligne.cpp
 	"Ligne.h"
 	"graphics.h"
 	"ListeArret.h"
 	"ChainonArret.h"
+	"ChainonTram.h"
 	<iostream>
+	<cmath>
 
-1584374286 c:\users\elmas\clionprojects\tramwaygit\ligne.h
+1584545032 c:\users\elmas\clionprojects\tramwaygit\ligne.h
 	"ListeArret.h"
+	"ChainonTram.h"
 
 1583247789 c:\users\elmas\clionprojects\tramwaygit\graphics.h
 
@@ -258,18 +261,18 @@
 	"Arret.h"
 	<iostream>
 
-1584381960 source:c:\users\elmas\clionprojects\tramwaygit\listetram.cpp
+1584545284 source:c:\users\elmas\clionprojects\tramwaygit\listetram.cpp
 	"ListeTram.h"
 	<iostream>
 	<cmath>
 	<vector>
 
-1584379811 c:\users\elmas\clionprojects\tramwaygit\listetram.h
+1584544193 c:\users\elmas\clionprojects\tramwaygit\listetram.h
 	"Tramway.h"
 	"ChainonTram.h"
 	"Ligne.h"
 
-1584381052 source:c:\users\elmas\clionprojects\tramwaygit\main.cpp
+1584538566 source:c:\users\elmas\clionprojects\tramwaygit\main.cpp
 	<iostream>
 	<fstream>
 	"Ligne.h"
@@ -280,7 +283,6 @@
 	<stddef.h>
 	<stdio.h>
 	<math.h>
-	"graphics.h"
 	<vector>
 	"ChainonArret.h"
 	"ListeArret.h"

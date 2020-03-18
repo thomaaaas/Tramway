@@ -44,6 +44,10 @@ void ListeTram::Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<doub
     {
         tram->getTramway()->setSens(false);
     }
+    if(!Arret->getPrec())
+    {
+        tram->getTramway()->setSens(true);
+    }
     if(tram->getTramway()->getSens())
     {
         //aller
@@ -72,6 +76,28 @@ void ListeTram::Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<doub
     Coord.push_back(y);
 }
 
+bool ListeTram::distance( ChainonTram *tram)
+{
+    ChainonTram *c;
+    if(tram->suiv == nullptr)
+    {
+        return true;
+    }
+    else
+    {
+        c = tram->suiv;
+    }
+    double d = sqrt(pow(tram->getTramway()->getX() - c->getTramway()->getX(),2) + pow(tram->getTramway()->getY()-c->getTramway()->getY(),2));
+    if(tram->getTramway()->getSens() == c->getTramway()->getSens())
+    {
+        if (d < tram->getTramway()->getDistanceMin())
+        {
+            cout<<"nique"<<endl;
+            return false;
+        }
+    }
+    return true;
+}
 
 void ListeTram::avancer(Ligne *ligne){
     ChainonTram *c = t;
@@ -84,15 +110,19 @@ void ListeTram::avancer(Ligne *ligne){
             x = c->getTramway()->getX();
             y = c->getTramway()->getY();
             cout << "Tramway : " << x << " " << y << endl;
-            if(ligne->arretTram(x,y))
+            if(distance(c))
             {
-                c->actuelArret = ligne->arretTram(x,y);
+                cout<<"okay"<<endl;
+                if(ligne->arretTram(x,y,c))
+            {
+                c->actuelArret = ligne->arretTram(x,y,c);
                 c->getTramway()->setonMarche(false);
                 c->getTramway()->setTempsArret(10);
             }
             Trajectoire(c->actuelArret, c,coord);
             c->getTramway()->setPosition(coord[0], coord[1]);
             coord.clear();
+            }
         }
         else
         {

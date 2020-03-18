@@ -2,7 +2,9 @@
 #include "graphics.h"
 #include "ListeArret.h"
 #include "ChainonArret.h"
+#include "ChainonTram.h"
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -19,12 +21,12 @@ void Ligne::affiche(){
     }
 }
 
-ChainonArret *Ligne::arretTram(double x, double y)
+ChainonArret *Ligne::arretTram(double x, double y, ChainonTram *d)
 {
     ChainonArret *c=d_arret->t;
     while(c!=nullptr)
     {
-        if(c->getArret()->getX()>x-1 && c->getArret()->getX()<x+1 && c->getArret()->getY()>y-1 && c->getArret()->getY()<y+1)
+        if()
         {
             return c;
         }

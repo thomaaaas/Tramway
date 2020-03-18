@@ -15,6 +15,7 @@ class ListeTram
         void affiche();
         void effacer();
         void Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<double> &coord);
+        bool distance (ChainonTram *tram);
     private:
         ChainonTram *t;
 };
