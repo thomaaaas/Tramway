@@ -38,7 +38,7 @@ void ListeTram::effacer(){
 
 void ListeTram::Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<double> &Coord)
 {
-    double coeff, b, x, y;
+    double dt, d, a, b, x, y;
     cout << tram->getTramway()->getSens()<<endl;
     if(!Arret->getSuiv())
     {
@@ -46,48 +46,30 @@ void ListeTram::Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<doub
     }
     if(tram->getTramway()->getSens())
     {
-           if(Arret->getSuiv()->getArret()->getX() - Arret->getArret()->getX() == 0)
-        {
-            y = tram->getTramway()->getY() + tram->getTramway()->getVitesse();
-            x = tram->getTramway()->getX();
-        }
-        else if(Arret->getSuiv()->getArret()->getY() - Arret->getArret()->getY() == 0)
-        {
-            x = tram->getTramway()->getX() + tram->getTramway()->getVitesse();
-            y = tram->getTramway()->getY();
-        }
-        else
-        {
-            coeff = (Arret->getSuiv()->getArret()->getY() - Arret->getArret()->getY()) / (Arret->getSuiv()->getArret()->getX() - Arret->getArret()->getX());
-            b = Arret->getArret()->getY() - Arret->getArret()->getX()*coeff;
-            y = coeff*(tram->getTramway()->getX()+tram->getTramway()->getVitesse()) + b;
-            x = (y-b)/coeff;
-        }
+        //aller
+        dt = sqrt(pow(tram->getTramway()->getX() - Arret->getArret()->getX(),2) + pow(tram->getTramway()->getY()-Arret->getArret()->getY(),2));
+        d = sqrt(pow(Arret->getSuiv()->getArret()->getX()-Arret->getArret()->getX(),2) + pow(Arret->getSuiv()->getArret()->getY()-Arret->getArret()->getY(),2));
+        dt+= tram->getTramway()->getVitesse();
+        a = dt/d;
+        b = 1-a;
+        x = a*Arret->getSuiv()->getArret()->getX() + b*Arret->getArret()->getX();
+        y = a*Arret->getSuiv()->getArret()->getY() + b*Arret->getArret()->getY();
     }
     else
     {
-        cout<< "ici"<<endl;
-        if(Arret->getPrec()->getArret()->getX() - Arret->getArret()->getX() == 0)
-        {
-            y = tram->getTramway()->getY() - tram->getTramway()->getVitesse();
-            x = tram->getTramway()->getX();
-        }
-        else if(Arret->getPrec()->getArret()->getY() - Arret->getArret()->getY() == 0)
-        {
-            x = tram->getTramway()->getX() - tram->getTramway()->getVitesse();
-            y = tram->getTramway()->getY();
-        }
-        else
-        {
-            coeff = (Arret->getPrec()->getArret()->getY() - Arret->getArret()->getY()) / (Arret->getPrec()->getArret()->getX() - Arret->getArret()->getX());
-            b = Arret->getArret()->getY() - Arret->getArret()->getX()*coeff;
-            y = coeff*(tram->getTramway()->getX()-tram->getTramway()->getVitesse()) + b;
-            x = (y-b)/coeff;
-        }
+        //retour
+        dt = sqrt(pow(tram->getTramway()->getX() - Arret->getArret()->getX(),2) + pow(tram->getTramway()->getY()-Arret->getArret()->getY(),2));
+        d = sqrt(pow(Arret->getPrec()->getArret()->getX()-Arret->getArret()->getX(),2) + pow(Arret->getPrec()->getArret()->getY()-Arret->getArret()->getY(),2));
+        dt+= tram->getTramway()->getVitesse();
+        a = dt/d;
+        b = 1-a;
+        x = a*Arret->getPrec()->getArret()->getX() + b*Arret->getArret()->getX();
+        y = a*Arret->getPrec()->getArret()->getY() + b*Arret->getArret()->getY();
     }
-        cout<< x << " "<< y <<endl;
-        Coord.push_back(x);
-        Coord.push_back(y);
+
+
+    Coord.push_back(x);
+    Coord.push_back(y);
 }
 
 

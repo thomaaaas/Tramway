@@ -8,7 +8,6 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <math.h>
-#include "graphics.h"
 #include <vector>
 #include "ChainonArret.h"
 #include "ListeArret.h"
@@ -87,7 +86,6 @@ int main()
     setbkcolor(WHITE);
     setcolor(BLUE);
     cleardevice();
-    //salit
 
     while(true){
         for(int i = 0; i < dataListe.size(); ++i){
@@ -95,7 +93,7 @@ int main()
             dataListe[i].tramway->avancer(dataListe[i].ligne);
             affichage(dataListe,i);
         }
-        Sleep(60);
+        Sleep(10);
     }
 
     getch();
