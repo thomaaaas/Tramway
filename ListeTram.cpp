@@ -39,7 +39,6 @@ void ListeTram::effacer(){
 void ListeTram::Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<double> &Coord)
 {
     double dt, d, a, b, x, y;
-    cout << tram->getTramway()->getSens()<<endl;
     if(!Arret->getSuiv())
     {
         tram->getTramway()->setSens(false);
@@ -76,12 +75,12 @@ void ListeTram::Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<doub
     Coord.push_back(y);
 }
 
-bool ListeTram::distance( ChainonTram *tram)
+bool ListeTram::distance(ChainonTram *tram)
 {
     ChainonTram *c;
     if(tram->suiv == nullptr)
     {
-        return true;
+        c = t;
     }
     else
     {
@@ -92,7 +91,6 @@ bool ListeTram::distance( ChainonTram *tram)
     {
         if (d < tram->getTramway()->getDistanceMin())
         {
-            cout<<"nique"<<endl;
             return false;
         }
     }
@@ -109,13 +107,11 @@ void ListeTram::avancer(Ligne *ligne){
         {
             x = c->getTramway()->getX();
             y = c->getTramway()->getY();
-            cout << "Tramway : " << x << " " << y << endl;
             if(distance(c))
             {
-                cout<<"okay"<<endl;
-                if(ligne->arretTram(x,y,c))
+                if(ligne->arretTram(c))
             {
-                c->actuelArret = ligne->arretTram(x,y,c);
+                c->actuelArret = ligne->arretTram(c);
                 c->getTramway()->setonMarche(false);
                 c->getTramway()->setTempsArret(10);
             }
@@ -129,9 +125,7 @@ void ListeTram::avancer(Ligne *ligne){
             if(c->getTramway()->getTempsArret() > 0)
             {
                 double tmps = c->getTramway()->getTempsArret();
-                cout << tmps << endl;
                 c->getTramway()->setTempsArret(--tmps);
-                cout << c->getTramway()->getTempsArret() <<endl;
             }
             else
             {
@@ -140,7 +134,6 @@ void ListeTram::avancer(Ligne *ligne){
         }
 
         c = c->suiv;
-        cout << "Tramway suivant " << endl;
     }
 
 }

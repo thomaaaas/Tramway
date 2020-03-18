@@ -7,7 +7,7 @@ class Ligne{
 public:
     Ligne(ListeArret *arret);
     void affiche();
-    ChainonArret *arretTram(double x, double y, ChainonTram *d);
+    ChainonArret *arretTram(ChainonTram *d);
 private:
     ListeArret *d_arret;
 };

@@ -37,27 +37,30 @@ void lectureFichier(string const &nomFichier, vector <liste> &dataListe){
         return;
     }
     donnees >> temporaire >> nbLignes >> temporaire;
-
+    cout << "nbLigne : " << nbLignes << endl;
     dataListe.resize(nbLignes);
 
     for(int i = 0; i < nbLignes; ++i){
-
+        cout << "----------------------------" << endl;
         ListeArret *listeArret = new ListeArret{};
         ListeTram *listeTramway = new ListeTram{};
 
         //Arrets
         donnees >> nbArret >> temporaire;
+        cout << nbArret << endl;
         for(int i = 0; i < nbArret; ++i){
             donnees >> c >> x >> c >> y >>  c;
+            cout << x << " " << y << endl;
             Arret *arret = new Arret{x,y};
             listeArret->insererArret(arret);
         }
 
         //Tram
-        donnees >> temporaire >> nbTram;
-        donnees >> temporaire;
+        donnees >> temporaire >> nbTram >> temporaire;
+        cout << nbTram << endl;
         for(int i = 0; i < nbTram; ++i){
             donnees >> c >> vitesse >> c >> distanceMin >> c >> x >> c >> y >> c >> sens >> c;
+            cout << vitesse << " " << distanceMin << " " << x << " " << y << " " << sens << endl;
             Tramway *tramway = new Tramway{vitesse,distanceMin,x,y,sens};
             listeTramway->insererTramway(tramway);
         }
@@ -93,11 +96,10 @@ int main()
             dataListe[i].tramway->avancer(dataListe[i].ligne);
             affichage(dataListe,i);
         }
-        Sleep(10);
+        Sleep(20);
     }
 
     getch();
     closegraph();
-
     return 0;
 }

@@ -1,12 +1,28 @@
-NombreLignes: 1
+NombreLignes: 3
 NombreStations: 4
 CoordoneesStations:
 	(10;1)
 	(10;200)
 	(100;400)
 	(150;150)
-NombreTrams: 3
+NombreTrams: 4
 CoordonesDepart:
-	(4.0;10.0;10;1;1)
-	(1.0;10.0;10;200;1)
-	(2.0;10.0;100;400;1)
+	(1.0;30.0;10;1;1)
+	(2.0;30.0;10;200;1)
+	(5.0;30.0;100;400;1)
+	(3.0;30.0;150;150;0)
+NombreStations: 2
+CoordoneesStations:
+	(200;1)
+	(200;200)
+NombreTrams: 1
+CoordonesDepart:
+	(1.0;30.0;200;1.0;1)
+NombreStations: 2
+CoordoneesStations:
+	(400;1)
+	(400;200)
+NombreTrams: 1
+CoordonesDepart:
+	(1.0;30.0;400;1.0;1)
+

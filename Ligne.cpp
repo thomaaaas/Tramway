@@ -21,13 +21,12 @@ void Ligne::affiche(){
     }
 }
 
-ChainonArret *Ligne::arretTram(double x, double y, ChainonTram *d)
+ChainonArret *Ligne::arretTram(ChainonTram *d)
 {
     ChainonArret *c=d_arret->t;
     while(c!=nullptr)
     {
-        if()
-        {
+        if(c->getArret()->getX() > d->getTramway()->getX() - d->getTramway()->getVitesse() && c->getArret()->getX() < d->getTramway()->getX() + d->getTramway()->getVitesse() && c->getArret()->getY() > d->getTramway()->getY() - 1 && c->getArret()->getY() < d->getTramway()->getY() + d->getTramway()->getVitesse()){
             return c;
         }
         else
