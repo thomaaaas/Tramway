@@ -74,12 +74,12 @@ void Tramway::setonMarche(bool marche)
 
 void Tramway::affiche(){
     setcolor(RED);
-    bar(d_X, d_Y, d_X+20, d_Y+20);
+    bar(d_X-10, d_Y-10, d_X+10, d_Y+10);
     setcolor(BLUE);
 }
 
 void Tramway::efface(){
     setcolor(WHITE);
-    bar(d_X, d_Y, d_X+20, d_Y+20);
+    bar(d_X-10, d_Y-10, d_X+10, d_Y+10);
     setcolor(BLUE);
 }

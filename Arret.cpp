@@ -20,5 +20,5 @@ void Arret::setPosition(double x, double y){
 }
 
 void Arret::affiche(){
-    bar(d_X, d_Y, d_X +30, d_Y +30);
+    bar(d_X-15, d_Y-15, d_X +15, d_Y +15);
 }
