@@ -71,11 +71,20 @@ void ListeTram::Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<doub
 bool ListeTram::distance(ChainonTram *tram)
 {
     ChainonTram *c;
+    ChainonTram *precC = nullptr;
     if(tram == t && tram->suiv == nullptr){return true;}
     if(tram->suiv == nullptr){c = t;}
-    else{c = tram->suiv;}
+    else
+    {
+        precC = tram;
+        c = tram->suiv;
+    }
     double d = sqrt(pow(tram->getTramway()->getX() - c->getTramway()->getX(),2) + pow(tram->getTramway()->getY()-c->getTramway()->getY(),2));
     if(tram->getTramway()->getSens() == c->getTramway()->getSens()){
+        if (precC == nullptr)
+        {
+            return true;
+        }
         if (d < tram->getTramway()->getDistanceMin()){
             return false;
         }
@@ -89,7 +98,7 @@ void ListeTram::avancer(Ligne *ligne){
     while(c){
         if (c->getTramway()->getonMarche()){
             if(distance(c)){
-                if(ligne->arretTram(c)){
+                if(ligne->arretTram(c) ){
                     c->actuelArret = ligne->arretTram(c);
                     c->getTramway()->setonMarche(false);
                     c->getTramway()->setTempsArret(10);

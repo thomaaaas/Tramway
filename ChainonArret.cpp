@@ -23,3 +23,4 @@ ChainonArret* ChainonArret::getPrec() const
 {
     return prec;
 }
+
