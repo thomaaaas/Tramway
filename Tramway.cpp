@@ -73,7 +73,14 @@ void Tramway::setonMarche(bool marche)
 
 
 void Tramway::affiche(){
-    setcolor(RED);
+    if (d_sens == 0)
+    {
+        setcolor(RED);
+    }
+    else
+    {
+        setcolor(GREEN);
+    }
     bar(d_X-10, d_Y-10, d_X+10, d_Y+10);
     setcolor(BLUE);
 }

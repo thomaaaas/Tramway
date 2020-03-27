@@ -68,27 +68,58 @@ void ListeTram::Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<doub
     Coord.push_back(y);
 }
 
-bool ListeTram::distance(ChainonTram *tram)
+int ListeTram::taille (Ligne *ligne)
+{
+    ChainonTram *c = t;
+    int i = 0;
+    while(c)
+    {
+        i++;
+        c=c->suiv;
+    }
+    return i;
+}
+
+bool ListeTram::distance(ChainonTram *tram,Ligne *ligne )
 {
     ChainonTram *c;
-    ChainonTram *precC = nullptr;
-    if(tram == t && tram->suiv == nullptr){return true;}
-    if(tram->suiv == nullptr){c = t;}
+    ChainonTram *precC;
+    if(tram == t && tram->suiv == nullptr)
+    {
+        return true;
+    }
+    if(tram->suiv == nullptr)
+    {
+        precC = tram;
+        c = t;
+    }
     else
     {
         precC = tram;
         c = tram->suiv;
     }
     double d = sqrt(pow(tram->getTramway()->getX() - c->getTramway()->getX(),2) + pow(tram->getTramway()->getY()-c->getTramway()->getY(),2));
-    if(tram->getTramway()->getSens() == c->getTramway()->getSens()){
-        if (precC == nullptr)
+    if(tram->getTramway()->getSens() == c->getTramway()->getSens())
         {
-            return true;
+            if(taille(ligne) == 2)
+            {
+                if(tram->getTramway()->getVitesse() > c->getTramway()->getVitesse() && d < tram->getTramway()->getDistanceMin())
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                if (d < tram->getTramway()->getDistanceMin())
+                {
+                    return false;
+                }
+            }
         }
-        if (d < tram->getTramway()->getDistanceMin()){
-            return false;
-        }
-    }
     return true;
 }
 
@@ -97,7 +128,7 @@ void ListeTram::avancer(Ligne *ligne){
     vector<double> coord;
     while(c){
         if (c->getTramway()->getonMarche()){
-            if(distance(c)){
+            if(distance(c,ligne)){
                 if(ligne->arretTram(c) ){
                     c->actuelArret = ligne->arretTram(c);
                     c->getTramway()->setonMarche(false);
