@@ -89,7 +89,6 @@ int main()
     setbkcolor(WHITE);
     setcolor(BLUE);
     cleardevice();
-
     while(true){
         for(int i = 0; i < dataListe.size(); ++i){
             dataListe[i].tramway->effacer();

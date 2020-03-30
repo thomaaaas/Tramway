@@ -9,7 +9,6 @@ class ChainonTram
     friend class ListeTram;
     public:
         Tramway* getTramway();
-
     private:
         ChainonArret *actuelArret;
         ChainonTram(Tramway *tramway);
