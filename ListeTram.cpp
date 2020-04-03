@@ -84,19 +84,16 @@ int ListeTram::taille (Ligne *ligne)
 bool ListeTram::distance(ChainonTram *tram,Ligne *ligne )
 {
     ChainonTram *c;
-    ChainonTram *precC;
     if(taille(ligne) == 1 )
     {
         return true;
     }
     if(tram->suiv == nullptr)
     {
-        precC = tram;
         c = t;
     }
     else
     {
-        precC = tram;
         c = tram->suiv;
     }
     double d = sqrt(pow(tram->getTramway()->getX() - c->getTramway()->getX(),2) + pow(tram->getTramway()->getY()-c->getTramway()->getY(),2));
@@ -117,7 +114,6 @@ bool ListeTram::distance(ChainonTram *tram,Ligne *ligne )
             }
             else
             {
-                    double d = sqrt(pow(tram->getTramway()->getX() - c->getTramway()->getX(),2) + pow(tram->getTramway()->getY()-c->getTramway()->getY(),2));
                     if(tram->getTramway()->getSens() == c->getTramway()->getSens())
                     {
                         if (d < tram->getTramway()->getDistanceMin())

@@ -12,7 +12,6 @@ class ListeArret
     public:
         ListeArret();
         ~ListeArret();
-        ChainonArret* getTete() const;
         void insererArret(Arret *arret);
         void affiche();
     private:

@@ -19,9 +19,7 @@ ListeArret::~ListeArret()
 	}
 }
 
-ChainonArret* ListeArret::getTete() const{
-    return t;
-}
+
 
 void ListeArret::affiche(){
     ChainonArret *c = t;
