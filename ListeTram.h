@@ -17,7 +17,6 @@ class ListeTram
         void Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<double> &coord);
         bool distance (ChainonTram *tram, Ligne *ligne);
         int taille(Ligne *ligne);
-      //  bool estDerriere (ChainonTram *tram, ChainonTram *c);
     private:
         ChainonTram *t;
 };

@@ -79,71 +79,13 @@ int ListeTram::taille (Ligne *ligne)
     }
     return i;
 }
-//bool ListeTram::estDerriere (ChainonTram *tram, ChainonTram *c)
-//{
-//    double a, b;
-//    a = (tram->getTramway()->getY() - c->getTramway()->getY() / tram->getTramway()->getX() - c->getTramway()->getX() );
-//    b = tram->getTramway()->getY() - a * tram->getTramway()->getX();
-//    if(tram->getTramway()->getSens() == 1)
-//    {
-//        if ( a>=0 && b>=0)
-//        {
-//            if (tram->getTramway()->getX() <= c->getTramway()->getX() && tram->getTramway()->getY() <= c->getTramway()->getY())
-//            {
-//                return true;
-//            }
-//            else
-//            {
-//                return false;
-//            }
-//        }
-//        if(a>0 && b<0)
-//        {
-//            if (tram->getTramway()->getX() >= c->getTramway()->getX() && tram->getTramway()->getY() >= c->getTramway()->getY())
-//            {
-//                return true;
-//            }
-//            else
-//            {
-//                return false;
-//            }
-//        }
-//
-//    }
-//    if(tram->getTramway()->getSens() == 0)
-//    {
-//        if ( a>=0 && b>=0)
-//        {
-//            if (tram->getTramway()->getX() >= c->getTramway()->getX() && tram->getTramway()->getY() >= c->getTramway()->getY())
-//            {
-//                return true;
-//            }
-//            else
-//            {
-//                return false;
-//            }
-//        }
-//        if(a<0 && b>0)
-//        {
-//            if (tram->getTramway()->getX() <= c->getTramway()->getX() && tram->getTramway()->getY() <= c->getTramway()->getY())
-//            {
-//                return true;
-//            }
-//            else
-//            {
-//                return false;
-//            }
-//        }
-//
-//    }
-//}
 
 
 bool ListeTram::distance(ChainonTram *tram,Ligne *ligne )
 {
     ChainonTram *c;
     ChainonTram *precC;
-    if(tram == t && tram->suiv == nullptr)
+    if(taille(ligne) == 1 )
     {
         return true;
     }
@@ -175,22 +117,15 @@ bool ListeTram::distance(ChainonTram *tram,Ligne *ligne )
             }
             else
             {
-                while( c != tram)
-                {
                     double d = sqrt(pow(tram->getTramway()->getX() - c->getTramway()->getX(),2) + pow(tram->getTramway()->getY()-c->getTramway()->getY(),2));
                     if(tram->getTramway()->getSens() == c->getTramway()->getSens())
                     {
-                        if (d < tram->getTramway()->getDistanceMin() /*&& estDerriere(tram,c)*/)
+                        if (d < tram->getTramway()->getDistanceMin())
                         {
                             return false;
                         }
                     }
-                    c = c->suiv;
-                    if(c == nullptr)
-                    {
-                        c = t;
-                    }
-                }
+
             }
     return true;
 }

@@ -15,7 +15,6 @@ class ListeArret
         ChainonArret* getTete() const;
         void insererArret(Arret *arret);
         void affiche();
-        //ChainonArret *arretTram(double x, double y);
     private:
         ChainonArret *t;
 };

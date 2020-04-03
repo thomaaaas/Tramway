@@ -52,23 +52,3 @@ void ListeArret::insererArret(Arret *arret)
     }
 }
 
-/*
-ChainonArret *ListeArret::arretTram(double x, double y)
-{
-    ChainonArret *c=t;
-    int i=1;
-    while(c!=nullptr)
-    {
-        if(c->d_x==x && c->d_y==y)
-        {
-            return c;
-        }
-        else
-        {
-            c=c->suiv;
-            i++;
-        }
-    }
-
-}
-*/
