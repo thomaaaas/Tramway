@@ -12,7 +12,7 @@ Ligne::Ligne(ListeArret *arret) : d_arret{arret}{
 
 }
 
-void Ligne::affiche(){
+void Ligne::affiche(){        // Affiche les lignse en vert ici
     setcolor(GREEN);
     ChainonArret *c = d_arret->t;
     while(c -> suiv){

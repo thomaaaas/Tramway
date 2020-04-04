@@ -9,7 +9,7 @@ ListeArret::ListeArret() : t{nullptr}
     //ctor
 }
 
-ListeArret::~ListeArret()
+ListeArret::~ListeArret()       // destructeur
 {
     while(t)
 	{
@@ -21,7 +21,7 @@ ListeArret::~ListeArret()
 
 
 
-void ListeArret::affiche(){
+void ListeArret::affiche(){      //Utilise "affiche()" sur la liste, qui affiche les arrêts
     ChainonArret *c = t;
     while(c){
         c->getArret()->affiche();
@@ -29,7 +29,7 @@ void ListeArret::affiche(){
     }
 }
 
-void ListeArret::insererArret(Arret *arret)
+void ListeArret::insererArret(Arret *arret)     // Insère un arrêt dans la liste chaînée
 {
 	ChainonArret *nc=new ChainonArret(arret);
 	if(t==nullptr)
