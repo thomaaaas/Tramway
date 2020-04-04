@@ -1,14 +1,6 @@
 #include "ListeTram.h"
-#include <iostream>
-#include <cmath>
-#include <vector>
 
-using namespace std;
-
-ListeTram::ListeTram() : t{nullptr}
-{
-    //ctor
-}
+ListeTram::ListeTram() : t{nullptr}{}
 
 ListeTram::~ListeTram()
 {
@@ -35,7 +27,7 @@ void ListeTram::effacer(){      //efface le tramway pointé de l'interface graphi
     }
 }
 
-void ListeTram::Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<double> &Coord)            //efface le tramway pointé de l'interface graphique
+void ListeTram::Trajectoire (ChainonArret *Arret, ChainonTram *tram, std::vector<double> &coord)            //efface le tramway pointé de l'interface graphique
 {
     double dt, d, a, b, x, y;
     if(!Arret->getSuiv()){
@@ -64,16 +56,16 @@ void ListeTram::Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<doub
         x = a*Arret->getPrec()->getArret()->getX() + b*Arret->getArret()->getX();       //calcul des nouvelles coordonnées
         y = a*Arret->getPrec()->getArret()->getY() + b*Arret->getArret()->getY();
     }
-    Coord.push_back(x);     //ajout des coordonnées dans le tableau
-    Coord.push_back(y);
+    //ajout des coordonnées dans le tableau
+    coord[0] = x;
+    coord[1] = y;
 }
 
 int ListeTram::taille (Ligne *ligne)        //retourne la taille de la liste chaînée
 {
     ChainonTram *c = t;
     int i = 0;
-    while(c)
-    {
+    while(c){
         i++;
         c=c->suiv;
     }
@@ -84,51 +76,47 @@ int ListeTram::taille (Ligne *ligne)        //retourne la taille de la liste cha
 bool ListeTram::distance(ChainonTram *tram,Ligne *ligne )
 {
     ChainonTram *c;
-    if(taille(ligne) == 1 )         //S'il n'y a qu'un tram sur la ligne, pas besoin de se soucier de la distance entre les trams
-    {
+    //S'il n'y a qu'un tram sur la ligne, pas besoin de se soucier de la distance entre les trams
+    if(taille(ligne) == 1 ){
         return true;
     }
-    if(tram->suiv == nullptr)       //S'il n'y a plus de tram devant, le tramway devient la tête
-    {
+     //S'il n'y a plus de tram devant, le tramway devient la tête
+    if(tram->suiv == nullptr){
         c = t;
     }
-    else
-    {
+    else{
         c = tram->suiv;
     }
     double d = sqrt(pow(tram->getTramway()->getX() - c->getTramway()->getX(),2) + pow(tram->getTramway()->getY()-c->getTramway()->getY(),2));
-
-            if(taille(ligne) == 2)          // S'il n'y a que 2 trams sur la ligne
-            {
-                if(tram->getTramway()->getSens() == c->getTramway()->getSens())     // S'il sont dans le même sens
-                {
-                    if(tram->getTramway()->getVitesse() > c->getTramway()->getVitesse() && d < tram->getTramway()->getDistanceMin() )
-                    {
-                        return false;       // renvoie false
-                    }
-                    else
-                    {
-                        return true;        // Sinon renvoie true
-                    }
-                }
+   // S'il n'y a que 2 trams sur la ligne
+    if(taille(ligne) == 2){
+        // S'il sont dans le même sens
+        if(tram->getTramway()->getSens() == c->getTramway()->getSens()){
+            if(tram->getTramway()->getVitesse() > c->getTramway()->getVitesse() && d < tram->getTramway()->getDistanceMin()){
+                    return false;       // renvoie false
             }
-            else       // S'il y a plus que 2 trams sur la ligne
-            {
-                    if(tram->getTramway()->getSens() == c->getTramway()->getSens())     // Dans le même sens
-                    {
-                        if (d < tram->getTramway()->getDistanceMin())       // Si deux trams ne respectent pas la distance minimale
-                        {
-                            return false;       //renvoie false
-                        }
-                    }
-
+            else{
+                return true;        // Sinon renvoie true
             }
+        }
+    }
+    // S'il y a plus que 2 trams sur la ligne
+    else{
+        // Dans le même sens
+        if(tram->getTramway()->getSens() == c->getTramway()->getSens()){
+            // Si deux trams ne respectent pas la distance minimale
+            if (d < tram->getTramway()->getDistanceMin()){
+                return false;       //renvoie false
+            }
+        }
+
+    }
     return true;            // Sinon renvoie true
 }
 
 void ListeTram::avancer(Ligne *ligne){              // Fait avancer les trams
     ChainonTram *c = t;
-    vector<double> coord;
+    std::vector<double> coord(2);
     while(c){
         if (c->getTramway()->getonMarche()){        // Si le tramway est en marche
             if(distance(c,ligne)){                  // S'il respecte la distance
@@ -139,7 +127,6 @@ void ListeTram::avancer(Ligne *ligne){              // Fait avancer les trams
                 }
             Trajectoire(c->actuelArret, c,coord);
             c->getTramway()->setPosition(coord[0], coord[1]);
-            coord.clear();
             }
         }
         else{       // Si le tramway est arrêté

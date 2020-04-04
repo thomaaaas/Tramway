@@ -1,9 +1,7 @@
-#ifndef CHAINONARRET_H
-#define CHAINONARRET_H
-
 #include "Arret.h"
 
-using namespace std;
+#ifndef CHAINONARRET_H
+#define CHAINONARRET_H
 
 class ChainonArret
 {
@@ -12,7 +10,7 @@ class ChainonArret
     public:
         Arret* getArret();
         ChainonArret *getSuiv() const;
-        ChainonArret * getPrec() const;
+        ChainonArret *getPrec() const;
     private:
         ChainonArret(Arret *arret);
         Arret *d_arret;

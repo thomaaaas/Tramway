@@ -1,5 +1,4 @@
 #include "Tramway.h"
-#include "graphics.h"
 
 Tramway::Tramway():
     d_distanceMin{0.0},

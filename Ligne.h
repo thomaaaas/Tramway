@@ -1,7 +1,10 @@
-#ifndef TRAMWAY_LIGNE_H
-#define TRAMWAY_LIGNE_H
 #include "ListeArret.h"
 #include "ChainonTram.h"
+#include "ChainonArret.h"
+#include "graphics.h"
+
+#ifndef TRAMWAY_LIGNE_H
+#define TRAMWAY_LIGNE_H
 
 class Ligne{
 public:

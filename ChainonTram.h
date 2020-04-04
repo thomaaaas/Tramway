@@ -1,8 +1,8 @@
+#include "Tramway.h"
+#include "ChainonArret.h"
+
 #ifndef CHAINONTRAM_H
 #define CHAINONTRAM_H
-#include "Tramway.h"
-#include "Arret.h"
-#include "ChainonArret.h"
 
 class ChainonTram
 {

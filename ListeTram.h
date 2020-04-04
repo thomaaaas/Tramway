@@ -1,8 +1,11 @@
-#ifndef LISTETRAM_H
-#define LISTETRAM_H
 #include "Tramway.h"
 #include "ChainonTram.h"
 #include "Ligne.h"
+#include <cmath>
+#include <vector>
+
+#ifndef LISTETRAM_H
+#define LISTETRAM_H
 
 class ListeTram
 {
@@ -14,8 +17,8 @@ class ListeTram
         void avancer(Ligne *ligne);
         void affiche();
         void effacer();
-        void Trajectoire (ChainonArret *Arret, ChainonTram *tram, vector<double> &coord);
-        bool distance (ChainonTram *tram, Ligne *ligne);
+        void Trajectoire(ChainonArret *Arret, ChainonTram *tram, std::vector<double> &coord);
+        bool distance(ChainonTram *tram, Ligne *ligne);
         int taille(Ligne *ligne);
     private:
         ChainonTram *t;

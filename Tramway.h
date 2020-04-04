@@ -1,3 +1,5 @@
+#include "graphics.h"
+
 #ifndef TRAMWAY_TRAMWAY_H
 #define TRAMWAY_TRAMWAY_H
 class Tramway{

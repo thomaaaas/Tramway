@@ -1,5 +1,4 @@
 #include "Arret.h"
-#include "graphics.h"
 
 Arret::Arret(double x, double y):               // Constructeur avec les coordonnées
     d_X{x},

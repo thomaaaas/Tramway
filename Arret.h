@@ -1,4 +1,5 @@
-#include<vector>
+#include "graphics.h"
+
 #ifndef TRAMWAY_ARRET_H
 #define TRAMWAY_ARRET_H
 class Arret{

@@ -1,9 +1,8 @@
-#ifndef LISTEARRET_H
-#define LISTEARRET_H
 #include "ChainonArret.h"
 #include "Arret.h"
 
-using namespace std;
+#ifndef LISTEARRET_H
+#define LISTEARRET_H
 
 class ListeArret
 {

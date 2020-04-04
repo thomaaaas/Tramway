@@ -9,10 +9,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <vector>
-#include "ChainonArret.h"
 #include "ListeArret.h"
 #include "ListeTram.h"
-#include "ChainonTram.h"
 
 using namespace std;
 
@@ -68,31 +66,28 @@ void lectureFichier(string const &nomFichier, vector <liste> &dataListe){
     }
 }
 
-void affichage(vector<liste> &dataListe, int i){        // On affiche le tableau ci-dessus, donc toute notre structure
-        dataListe[i].arret -> affiche();
-        dataListe[i].ligne -> affiche();
-        dataListe[i].tramway -> affiche();
+void affichage(vector<liste> &dataListe){        // On affiche le tableau ci-dessus, donc toute notre structure
+        for(int i = 0; i < dataListe.size(); ++i){
+            dataListe[i].tramway->effacer();
+            dataListe[i].tramway->avancer(dataListe[i].ligne);
+            dataListe[i].arret -> affiche();
+            dataListe[i].ligne -> affiche();
+            dataListe[i].tramway -> affiche();
+        }
 }
 
 int main()
 {
     vector<liste> dataListe;
-
     lectureFichier("donneesTram.txt", dataListe);
-
     opengraphsize(800,800);
     setbkcolor(WHITE);
     setcolor(BLUE);
     cleardevice();
     while(true){
-        for(int i = 0; i < dataListe.size(); ++i){
-            dataListe[i].tramway->effacer();
-            dataListe[i].tramway->avancer(dataListe[i].ligne);
-            affichage(dataListe,i);
-        }
+        affichage(dataListe);
         Sleep(20);
     }
-
     getch();
     closegraph();
     return 0;

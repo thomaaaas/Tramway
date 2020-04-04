@@ -31,20 +31,16 @@
 	"graphics.h"
 	<Windows.h>
 
-1584718117 source:c:\users\norma\clionprojects\tramway\ligne.cpp
+1586029315 source:c:\users\norma\clionprojects\tramway\ligne.cpp
 	"Ligne.h"
-	"graphics.h"
+
+1586029294 c:\users\norma\clionprojects\tramway\ligne.h
 	"ListeArret.h"
+	"ChainonTram.h"
 	"ChainonArret.h"
-	"ChainonTram.h"
-	<iostream>
-	<cmath>
+	"graphics.h"
 
-1584546862 c:\users\norma\clionprojects\tramway\ligne.h
-	"ListeArret.h"
-	"ChainonTram.h"
-
-1584638365 source:c:\users\norma\clionprojects\tramway\main.cpp
+1586030222 source:c:\users\norma\clionprojects\tramway\main.cpp
 	<iostream>
 	<fstream>
 	"Ligne.h"
@@ -56,27 +52,25 @@
 	<stdio.h>
 	<math.h>
 	<vector>
-	"ChainonArret.h"
 	"ListeArret.h"
 	"ListeTram.h"
-	"ChainonTram.h"
 
-1584447775 c:\users\norma\clionprojects\tramway\tramway.h
+1586029933 c:\users\norma\clionprojects\tramway\tramway.h
+	"graphics.h"
 
 1583258505 c:\users\norma\clionprojects\tramway\station.h
 	<vector>
 
-1581957444 c:\users\norma\clionprojects\tramway\graphics.h
+1581961044 c:\users\norma\clionprojects\tramway\graphics.h
 
 1582046743 source:c:\users\norma\clionprojects\tramway\station.cpp
 	"Station.h"
 	"graphics.h"
 
-1584717934 source:c:\users\norma\clionprojects\tramway\tramway.cpp
+1586029927 source:c:\users\norma\clionprojects\tramway\tramway.cpp
 	"Tramway.h"
-	"graphics.h"
 
-1581957444 source:c:\users\norma\clionprojects\tramway\winbgi.cpp
+1581961044 source:c:\users\norma\clionprojects\tramway\winbgi.cpp
 	<windows.h>
 	<stddef.h>
 	<stdio.h>
@@ -168,52 +162,41 @@
 	"Station.h"
 	<iostream>
 
-1584447775 source:c:\users\norma\clionprojects\tramway\chainonarret.cpp
+1586029209 source:c:\users\norma\clionprojects\tramway\chainonarret.cpp
 	"ChainonArret.h"
-	"Arret.h"
-	"ListeArret.h"
-	<iostream>
 
-1584447775 c:\users\norma\clionprojects\tramway\chainonarret.h
+1586029061 c:\users\norma\clionprojects\tramway\chainonarret.h
 	"Arret.h"
 
-1584033258 c:\users\norma\clionprojects\tramway\listearret.h
+1586029401 c:\users\norma\clionprojects\tramway\listearret.h
 	"ChainonArret.h"
 	"Arret.h"
 
-1584447775 source:c:\users\norma\clionprojects\tramway\chainontram.cpp
+1586029153 source:c:\users\norma\clionprojects\tramway\chainontram.cpp
 	"ChainonTram.h"
+
+1586029105 c:\users\norma\clionprojects\tramway\chainontram.h
 	"Tramway.h"
-	<iostream>
 	"ChainonArret.h"
 
-1584447775 c:\users\norma\clionprojects\tramway\chainontram.h
-	"Tramway.h"
-	"Arret.h"
-	"ChainonArret.h"
-
-1584033333 source:c:\users\norma\clionprojects\tramway\listearret.cpp
+1586029396 source:c:\users\norma\clionprojects\tramway\listearret.cpp
 	"ListeArret.h"
-	"Arret.h"
-	<iostream>
 
-1584641128 source:c:\users\norma\clionprojects\tramway\listetram.cpp
+1586030166 source:c:\users\norma\clionprojects\tramway\listetram.cpp
 	"ListeTram.h"
-	<iostream>
-	<cmath>
-	<vector>
 
-1584545850 c:\users\norma\clionprojects\tramway\listetram.h
+1586030155 c:\users\norma\clionprojects\tramway\listetram.h
 	"Tramway.h"
 	"ChainonTram.h"
 	"Ligne.h"
-
-1584447775 c:\users\norma\clionprojects\tramway\arret.h
+	<cmath>
 	<vector>
 
-1584718125 source:c:\users\norma\clionprojects\tramway\arret.cpp
-	"Arret.h"
+1586029188 c:\users\norma\clionprojects\tramway\arret.h
 	"graphics.h"
+
+1586029181 source:c:\users\norma\clionprojects\tramway\arret.cpp
+	"Arret.h"
 
 1584884637 source:c:\users\elmas\clionprojects\tramwaygit\chainonarret.cpp
 	"ChainonArret.h"
